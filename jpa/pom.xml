@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>aggregator</artifactId>
+    <groupId>com.googlecode.osgi-enterprise</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.googlecode.osgi-enterprise</groupId>
+  <artifactId>jpa</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>OSGi Enterprise JPA Aggregator</name>
+  <modules>
+  	<module>datasource-derby</module>
+  	<module>model</module>
+  	<module>library-model</module>
+  	<module>library-client</module>
+  	<module>library-test-pax1</module>
+  	<module>library-test-pax2</module>
+  </modules>
+</project>
