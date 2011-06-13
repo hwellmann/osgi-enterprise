@@ -27,6 +27,8 @@ import static org.ops4j.pax.exam.CoreOptions.workingDirectory;
 
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.junit.Configuration;
+import org.ops4j.pax.exam.junit.ExamReactorStrategy;
+import org.ops4j.pax.exam.spi.reactors.EagerSingleStagedReactorFactory;
 
 
 /**
@@ -39,6 +41,7 @@ import org.ops4j.pax.exam.junit.Configuration;
  * @author Harald Wellmann
  *
  */
+@ExamReactorStrategy(EagerSingleStagedReactorFactory.class)
 public class OpenJpaOsgiTest extends AbstractLibraryTest
 {
     public static final String ECLIPSELINK_VERSION = "2.2.0";
@@ -78,9 +81,9 @@ public class OpenJpaOsgiTest extends AbstractLibraryTest
         mavenBundle("org.apache.derby", "derby", "10.8.1.2"),
         
         // Logging
-        mavenBundle("org.slf4j", "slf4j-api", "1.5.11"),
-        mavenBundle("ch.qos.logback", "logback-core", "0.9.20"),
-        mavenBundle("ch.qos.logback", "logback-classic", "0.9.20"),
+        mavenBundle("org.slf4j", "slf4j-api", "1.6.1"),
+        mavenBundle("ch.qos.logback", "logback-core", "0.9.29"),
+        mavenBundle("ch.qos.logback", "logback-classic", "0.9.29"),
         
         // OSGi Compendium and Declarative Services         
         mavenBundle("org.osgi", "org.osgi.compendium", "4.2.0"),
