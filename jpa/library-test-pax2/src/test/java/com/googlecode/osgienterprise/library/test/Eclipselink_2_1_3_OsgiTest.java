@@ -51,10 +51,11 @@ public class Eclipselink_2_1_3_OsgiTest extends AbstractLibraryTest
         Option[] options = options(
               
         // Bundles under test
-        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.datasource", "0.0.1-SNAPSHOT"),
-        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.model", "0.0.1-SNAPSHOT"),
-        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.client", "0.0.1-SNAPSHOT"),
-        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.jpa.eclipselink", "0.0.1-SNAPSHOT"),
+        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.datasource", OSGI_ENTERPRISE_VERSION),
+        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.model", OSGI_ENTERPRISE_VERSION),
+        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.client", OSGI_ENTERPRISE_VERSION),
+        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.jpa.eclipselink", OSGI_ENTERPRISE_VERSION),
+        mavenBundle("com.googlecode.osgi-enterprise", "com.googlecode.osgienterprise.logback.config", OSGI_ENTERPRISE_VERSION),
 
         // Eclipselink and dependencies
         mavenBundle("org.eclipse.persistence", "org.eclipse.persistence.core", ECLIPSELINK_VERSION),

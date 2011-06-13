@@ -15,6 +15,7 @@
 
   <modules>
     <module>jpa</module>
+    <module>com.googlecode.osgienterprise.logback.config</module>
   </modules>
 
   <dependencyManagement>
