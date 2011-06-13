@@ -10,7 +10,7 @@
   <properties>
     <aries.version>0.3</aries.version>
     <openjpa.version>2.1.0</openjpa.version>
-    <eclipselink.version>2.2.0</eclipselink.version>
+    <eclipselink.version>2.1.3</eclipselink.version>
   </properties>
 
   <modules>
