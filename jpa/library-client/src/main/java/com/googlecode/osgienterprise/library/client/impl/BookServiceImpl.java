@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.openjpa.test.osgi.client.impl;
+package com.googlecode.osgienterprise.library.client.impl;
 
 import java.util.List;
 
@@ -25,10 +25,10 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-import org.apache.openjpa.test.osgi.client.BookService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.googlecode.osgienterprise.library.client.BookService;
 import com.googlecode.osgienterprise.library.model.Book;
 
 

@@ -6,13 +6,17 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>com.googlecode.osgi-enterprise.jpa</groupId>
-  <artifactId>com.googlecode.osgienterprise.library.model</artifactId>
+  <artifactId>com.googlecode.osgienterprise.jpa.eclipselink</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <dependencies>
     <dependency>
       <groupId>org.eclipse.persistence</groupId>
-      <artifactId>javax.persistence</artifactId>
+      <artifactId>org.eclipse.persistence.jpa</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.core</artifactId>
       <scope>provided</scope>
     </dependency>
   </dependencies>
@@ -25,7 +29,7 @@
         <configuration>
           <instructions>
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-            <Meta-Persistence>META-INF/persistence.xml</Meta-Persistence>
+            <Bundle-Activator>com.googlecode.osgienterprise.jpa.eclipselink.Activator</Bundle-Activator>
           </instructions>
         </configuration>
       </plugin>

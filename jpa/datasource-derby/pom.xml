@@ -6,7 +6,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>com.googlecode.osgi-enterprise.jpa</groupId>
-  <artifactId>datasource-derby</artifactId>
+  <artifactId>com.googlecode.osgienterprise.library.datasource</artifactId>
   <packaging>bundle</packaging>
   <name>OSGi Enterprise Library Data Source</name>
   <version>0.0.1-SNAPSHOT</version>
@@ -33,7 +33,7 @@
         <configuration>
           <instructions>
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-            <Bundle-Activator>org.apache.openjpa.test.osgi.ds.derby.DerbyDataSourceProvider</Bundle-Activator>
+            <Bundle-Activator>com.googlecode.osgienterprise.library.datasource.DerbyDataSourceProvider</Bundle-Activator>
             <Export-Package>!*</Export-Package>
           </instructions>
         </configuration>

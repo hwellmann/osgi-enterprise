@@ -6,7 +6,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>com.googlecode.osgi-enterprise.jpa</groupId>
-  <artifactId>library-client</artifactId>
+  <artifactId>com.googlecode.osgienterprise.library.client</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <dependencies>

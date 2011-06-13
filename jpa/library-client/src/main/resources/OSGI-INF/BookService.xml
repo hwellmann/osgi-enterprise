@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.0.0" name="com.googlecode.osgienterprise.library.client.impl.BookServiceImpl">
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.googlecode.osgienterprise.library.client.impl.BookServiceImpl">
    <implementation class="com.googlecode.osgienterprise.library.client.impl.BookServiceImpl"/>
-   <reference bind="setEntityManagerFactory" cardinality="1..1" interface="javax.persistence.EntityManagerFactory" name="EntityManagerFactory" policy="static" target="(osgi.unit.name=openjpa.osgi.itest)"/>
+   <reference bind="setEntityManagerFactory" cardinality="1..1" interface="javax.persistence.EntityManagerFactory" name="EntityManagerFactory" policy="static" target="(osgi.unit.name=library)"/>
    <service>
       <provide interface="com.googlecode.osgienterprise.library.client.BookService"/>
    </service>

@@ -12,10 +12,10 @@
   <name>OSGi Enterprise JPA Aggregator</name>
   <modules>
   	<module>datasource-derby</module>
-  	<module>model</module>
   	<module>library-model</module>
   	<module>library-client</module>
   	<module>library-test-pax1</module>
   	<module>library-test-pax2</module>
+  	<module>com.googlecode.osgienterprise.jpa.eclipselink</module>
   </modules>
 </project>
