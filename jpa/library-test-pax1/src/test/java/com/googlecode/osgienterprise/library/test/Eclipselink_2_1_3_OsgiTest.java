@@ -16,33 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.openjpa.test.osgi.itest;
+package com.googlecode.osgienterprise.library.test;
 
-import static org.junit.Assert.assertEquals;
 import static org.ops4j.pax.exam.CoreOptions.equinox;
 import static org.ops4j.pax.exam.CoreOptions.mavenBundle;
 import static org.ops4j.pax.exam.CoreOptions.options;
 
-import java.util.List;
-
-import javax.persistence.EntityManagerFactory;
-import javax.sql.DataSource;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.ops4j.pax.exam.Inject;
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.junit.Configuration;
-import org.ops4j.pax.exam.junit.JUnit4TestRunner;
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.Constants;
-import org.osgi.framework.Filter;
-import org.osgi.framework.FrameworkUtil;
-import org.osgi.framework.InvalidSyntaxException;
-import org.osgi.util.tracker.ServiceTracker;
-
-import com.googlecode.osgienterprise.library.client.BookService;
-import com.googlecode.osgienterprise.library.model.Book;
 
 
 /**
@@ -55,16 +36,10 @@ import com.googlecode.osgienterprise.library.model.Book;
  * @author Harald Wellmann
  *
  */
-@RunWith(JUnit4TestRunner.class)
-public class Eclipselink_2_2_0_OsgiTest
+public class Eclipselink_2_1_3_OsgiTest extends AbstractLibraryTest
 {
-    public static final String ECLIPSELINK_VERSION = "2.2.0";
-    public static final String ARIES_VERSION = "0.3";
-    public static final long DEFAULT_TIMEOUT = 10000;
+    public static final String ECLIPSELINK_VERSION = "2.1.3";
 
-    @Inject
-    protected BundleContext bundleContext;
-   
     @Configuration
     public static Option[] configuration() {
         Option[] options = options(
@@ -119,66 +94,4 @@ public class Eclipselink_2_2_0_OsgiTest
         return options;
     }
     
-    @Test
-    public void findDataSource() {
-        getOsgiService(DataSource.class);
-    }
-
-    @Test
-    public void findEntityManagerFactory() {
-        getOsgiService(EntityManagerFactory.class, "(osgi.unit.name=library)",
-                DEFAULT_TIMEOUT);
-    }
-
-    @Test
-    public void findAndRunBookService() {
-        BookService service = getOsgiService(BookService.class);
-        service.createBooks();
-        List<Book> books = service.findBooks();
-        assertEquals(2, books.size());
-    }
-
-    protected <T> T getOsgiService(Class<T> type, long timeout) {
-        return getOsgiService(type, null, timeout);
-    }
-
-    protected <T> T getOsgiService(Class<T> type) {
-        return getOsgiService(type, null, DEFAULT_TIMEOUT);
-    }
-
-    protected <T> T getOsgiService(Class<T> type, String filter, long timeout) {
-        return getOsgiService(null, type, filter, timeout);
-    }
-
-    protected <T> T getOsgiService(BundleContext bc, Class<T> type, String filter, long timeout) {
-        ServiceTracker tracker = null;
-        try {
-            String flt;
-            if (filter != null) {
-                if (filter.startsWith("(")) {
-                    flt = "(&(" + Constants.OBJECTCLASS + "=" + type.getName() + ")" + filter + ")";
-                }
-                else {
-                    flt = "(&(" + Constants.OBJECTCLASS + "=" + type.getName() + ")(" + filter + "))";
-                }
-            }
-            else {
-                flt = "(" + Constants.OBJECTCLASS + "=" + type.getName() + ")";
-            }
-            Filter osgiFilter = FrameworkUtil.createFilter(flt);
-            tracker = new ServiceTracker(bc == null ? bundleContext : bc, osgiFilter, null);
-            tracker.open();
-            Object svc = type.cast(tracker.waitForService(timeout));
-            if (svc == null) {
-                throw new RuntimeException("Gave up waiting for service " + flt);
-            }
-            return type.cast(svc);
-        }
-        catch (InvalidSyntaxException e) {
-            throw new IllegalArgumentException("Invalid filter", e);
-        }
-        catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
 }
