@@ -40,6 +40,8 @@
     <properties>
       <property name="openjpa.Log" value="DefaultLevel=INFO" />
       <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema" />
+      <property name="openjpa.RuntimeUnenhancedClasses" value="warn"/>
+      
       <property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
       <property name="eclipselink.logging.level" value="INFO" />
     </properties>
