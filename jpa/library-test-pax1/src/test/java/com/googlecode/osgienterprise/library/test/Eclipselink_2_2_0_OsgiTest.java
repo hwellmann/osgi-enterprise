@@ -57,10 +57,10 @@ public class Eclipselink_2_2_0_OsgiTest extends AbstractLibraryTest
         // org.ops4j.pax.exam.container.def.PaxRunnerOptions.cleanCaches(),
 
         // Bundles under test
-        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.datasource"),
-        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.model"),
-        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.client"),
-        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.jpa.eclipselink"),
+        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.datasource").versionAsInProject(),
+        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.model").versionAsInProject(),
+        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.client").versionAsInProject(),
+        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.jpa.eclipselink").versionAsInProject(),
 
         // OpenJPA and dependencies
         mavenBundle("org.eclipse.persistence", "org.eclipse.persistence.core", ECLIPSELINK_VERSION),
@@ -83,9 +83,9 @@ public class Eclipselink_2_2_0_OsgiTest extends AbstractLibraryTest
         mavenBundle("org.apache.derby", "derby", "10.5.3.0_1"),
         
         // Logging
-        mavenBundle("org.slf4j", "slf4j-api", "1.5.11"),
-        mavenBundle("ch.qos.logback", "logback-core", "0.9.20"),
-        mavenBundle("ch.qos.logback", "logback-classic", "0.9.20"),
+        mavenBundle("org.slf4j", "slf4j-api").versionAsInProject(),
+        mavenBundle("ch.qos.logback", "logback-core").versionAsInProject(),
+        mavenBundle("ch.qos.logback", "logback-classic").versionAsInProject(),
         
         // OSGi Compendium and Declarative Services         
         mavenBundle("org.osgi", "org.osgi.compendium", "4.2.0"),

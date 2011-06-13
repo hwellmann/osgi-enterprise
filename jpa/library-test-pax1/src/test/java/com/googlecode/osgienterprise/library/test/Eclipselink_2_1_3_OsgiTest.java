@@ -78,9 +78,9 @@ public class Eclipselink_2_1_3_OsgiTest extends AbstractLibraryTest
         mavenBundle("org.apache.derby", "derby", "10.5.3.0_1"),
         
         // Logging
-        mavenBundle("org.slf4j", "slf4j-api", "1.5.11"),
-        mavenBundle("ch.qos.logback", "logback-core", "0.9.20"),
-        mavenBundle("ch.qos.logback", "logback-classic", "0.9.20"),
+        mavenBundle("org.slf4j", "slf4j-api").versionAsInProject(),
+        mavenBundle("ch.qos.logback", "logback-core").versionAsInProject(),
+        mavenBundle("ch.qos.logback", "logback-classic").versionAsInProject(),
         
         // OSGi Compendium and Declarative Services         
         mavenBundle("org.osgi", "org.osgi.compendium", "4.2.0"),

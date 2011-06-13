@@ -13,7 +13,7 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>jcl-over-slf4j</artifactId>
-      <version>1.5.11</version>
+      <version>1.6.1</version>
       <scope>test</scope>
     </dependency>
 
@@ -32,6 +32,12 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>com.googlecode.osgienterprise.library.datasource</artifactId>
+      <version>${project.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.googlecode.osgi-enterprise</groupId>
+      <artifactId>com.googlecode.osgienterprise.logback.config</artifactId>
       <version>${project.version}</version>
       <scope>test</scope>
     </dependency>
@@ -113,8 +119,19 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>org.apache.aries.proxy</groupId>
+      <artifactId>org.apache.aries.proxy.impl</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>org.apache.openjpa</groupId>
       <artifactId>openjpa</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-dbcp</groupId>
+      <artifactId>commons-dbcp</artifactId>
+      <version>1.4</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -147,17 +164,34 @@
       <artifactId>org.apache.servicemix.bundles.cglib</artifactId>
       <scope>test</scope>
     </dependency>
-    <!--dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-simple</artifactId> 
-      <version>1.6.1</version> <scope>test</scope> </dependency -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>0.9.20</version>
     </dependency>
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-core</artifactId>
-      <version>0.9.20</version>
     </dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.servicemix.tooling</groupId>
+        <artifactId>depends-maven-plugin</artifactId>
+        <version>1.2</version>
+        <executions>
+          <execution>
+            <id>generate-depends-file</id>
+            <goals>
+              <goal>generate-depends-file</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>

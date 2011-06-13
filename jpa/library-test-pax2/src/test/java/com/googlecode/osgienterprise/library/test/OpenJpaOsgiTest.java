@@ -43,39 +43,37 @@ import org.ops4j.pax.exam.spi.reactors.EagerSingleStagedReactorFactory;
 @ExamReactorStrategy(EagerSingleStagedReactorFactory.class)
 public class OpenJpaOsgiTest extends AbstractLibraryTest
 {
-    public static final String ECLIPSELINK_VERSION = "2.2.0";
-
     @Configuration
     public static Option[] configuration() {
         Option[] options = options(
               
 
         // Bundles under test
-        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.datasource", OSGI_ENTERPRISE_VERSION),
-        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.model", OSGI_ENTERPRISE_VERSION),
-        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.client", OSGI_ENTERPRISE_VERSION),
-        mavenBundle("com.googlecode.osgi-enterprise", "com.googlecode.osgienterprise.logback.config", OSGI_ENTERPRISE_VERSION),
+        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.datasource").versionAsInProject(),
+        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.model").versionAsInProject(),
+        mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.client").versionAsInProject(),
+        mavenBundle("com.googlecode.osgi-enterprise", "com.googlecode.osgienterprise.logback.config").versionAsInProject(),
 
         // OpenJPA and dependencies
-        mavenBundle("org.apache.openjpa", "openjpa", "2.1.0"),
-        mavenBundle("org.apache.geronimo.specs", "geronimo-jpa_2.0_spec"),
-        mavenBundle("org.apache.geronimo.specs", "geronimo-jta_1.1_spec"),
-        mavenBundle("commons-lang", "commons-lang"),
-        mavenBundle("commons-collections", "commons-collections"),
-        mavenBundle("commons-pool", "commons-pool"),
-        mavenBundle("commons-dbcp", "commons-dbcp"),
+        mavenBundle("org.apache.openjpa", "openjpa").versionAsInProject(),
+        mavenBundle("org.apache.geronimo.specs", "geronimo-jpa_2.0_spec").versionAsInProject(),
+        mavenBundle("org.apache.geronimo.specs", "geronimo-jta_1.1_spec").versionAsInProject(),
+        mavenBundle("commons-lang", "commons-lang").versionAsInProject(),
+        mavenBundle("commons-collections", "commons-collections").versionAsInProject(),
+        mavenBundle("commons-pool", "commons-pool").versionAsInProject(),
+        mavenBundle("commons-dbcp", "commons-dbcp").versionAsInProject(),
         mavenBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.serp"),
 
         // Aries JPA and JNDI services and dependencies
-        mavenBundle("org.apache.aries", "org.apache.aries.util", ARIES_VERSION),
-        mavenBundle("org.apache.aries.jpa", "org.apache.aries.jpa.api", ARIES_VERSION),
-        mavenBundle("org.apache.aries.jpa", "org.apache.aries.jpa.container", ARIES_VERSION),
-        mavenBundle("org.apache.aries.jndi", "org.apache.aries.jndi.api", ARIES_VERSION),
-        mavenBundle("org.apache.aries.jndi", "org.apache.aries.jndi.core", ARIES_VERSION),
-        mavenBundle("org.apache.aries.jndi", "org.apache.aries.jndi.url", ARIES_VERSION),
-        mavenBundle("org.apache.aries.proxy", "org.apache.aries.proxy.api", ARIES_VERSION),
-        mavenBundle("org.apache.aries.proxy", "org.apache.aries.proxy.impl").version("0.3"),
-        mavenBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.cglib", "2.1_3_4"),
+        mavenBundle("org.apache.aries", "org.apache.aries.util").versionAsInProject(),
+        mavenBundle("org.apache.aries.jpa", "org.apache.aries.jpa.api").versionAsInProject(),
+        mavenBundle("org.apache.aries.jpa", "org.apache.aries.jpa.container").versionAsInProject(),
+        mavenBundle("org.apache.aries.jndi", "org.apache.aries.jndi.api").versionAsInProject(),
+        mavenBundle("org.apache.aries.jndi", "org.apache.aries.jndi.core").versionAsInProject(),
+        mavenBundle("org.apache.aries.jndi", "org.apache.aries.jndi.url").versionAsInProject(),
+        mavenBundle("org.apache.aries.proxy", "org.apache.aries.proxy.api").versionAsInProject(),
+        mavenBundle("org.apache.aries.proxy", "org.apache.aries.proxy.impl").versionAsInProject(),
+        mavenBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.cglib").versionAsInProject(),
         // Database 
         mavenBundle("org.apache.derby", "derby", "10.8.1.2"),
         
@@ -91,7 +89,7 @@ public class OpenJpaOsgiTest extends AbstractLibraryTest
         // Run all tests both on Felix and Equinox
         //felix().version("2.0.1"),
         junitBundles(),
-        equinox().version("3.6.0"),
+        equinox().version("3.7.0"),
         workingDirectory("/tmp/pax"),
         keepCaches()
         );
