@@ -75,7 +75,7 @@ public class Eclipselink_2_1_3_OsgiTest extends AbstractLibraryTest
         mavenBundle("org.apache.aries.proxy", "org.apache.aries.proxy.impl", ARIES_VERSION),
         mavenBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.cglib", "2.1_3_4"),
         // Database 
-        mavenBundle("org.apache.derby", "derby", "10.5.3.0_1"),
+        mavenBundle("org.apache.derby", "derby", "10.8.1.2"),
         
         // Logging
         mavenBundle("org.slf4j", "slf4j-api", "1.5.11"),

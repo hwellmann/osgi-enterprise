@@ -31,19 +31,19 @@
         <version>4.2.0</version>
       </dependency>
       <dependency>
-        <groupId>org.apache.commons</groupId>
-        <artifactId>com.springsource.org.apache.commons.collections</artifactId>
+        <groupId>commons-collections</groupId>
+        <artifactId>commons-collections</artifactId>
         <version>3.2.1</version>
       </dependency>
       <dependency>
-        <groupId>org.apache.commons</groupId>
-        <artifactId>com.springsource.org.apache.commons.lang</artifactId>
-        <version>2.2.0</version>
+        <groupId>commons-lang</groupId>
+        <artifactId>commons-lang</artifactId>
+        <version>2.6</version>
       </dependency>
       <dependency>
-        <groupId>org.apache.commons</groupId>
-        <artifactId>com.springsource.org.apache.commons.pool</artifactId>
-        <version>1.5.3</version>
+        <groupId>commons-pool</groupId>
+        <artifactId>commons-pool</artifactId>
+        <version>1.5.6</version>
       </dependency>
       <dependency>
         <groupId>org.apache.openjpa</groupId>
@@ -63,7 +63,7 @@
       <dependency>
         <groupId>org.apache.derby</groupId>
         <artifactId>derby</artifactId>
-        <version>10.5.3.0_1</version>
+        <version>10.8.1.2</version>
       </dependency>
       <dependency>
         <groupId>org.apache.aries</groupId>

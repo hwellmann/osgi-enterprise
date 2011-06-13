@@ -53,6 +53,7 @@ public class Eclipselink_2_2_0_OsgiTest extends AbstractLibraryTest
         mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.model", OSGI_ENTERPRISE_VERSION),
         mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.client", OSGI_ENTERPRISE_VERSION),
         mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.jpa.eclipselink", OSGI_ENTERPRISE_VERSION),
+        mavenBundle("com.googlecode.osgi-enterprise", "com.googlecode.osgienterprise.logback.config", OSGI_ENTERPRISE_VERSION),
 
         // Eclipselink and dependencies
         mavenBundle("org.eclipse.persistence", "org.eclipse.persistence.core", ECLIPSELINK_VERSION),
@@ -72,7 +73,7 @@ public class Eclipselink_2_2_0_OsgiTest extends AbstractLibraryTest
         mavenBundle("org.apache.aries.proxy", "org.apache.aries.proxy.impl").version("0.3"),
         mavenBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.cglib", "2.1_3_4"),
         // Database 
-        mavenBundle("org.apache.derby", "derby", "10.5.3.0_1"),
+        mavenBundle("org.apache.derby", "derby", "10.8.1.2"),
         
         // Logging
         mavenBundle("org.slf4j", "slf4j-api", "1.5.11"),
