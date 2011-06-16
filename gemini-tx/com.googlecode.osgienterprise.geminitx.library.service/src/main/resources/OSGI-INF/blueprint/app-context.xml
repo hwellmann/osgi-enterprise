@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" 
+  xmlns:context="http://www.springframework.org/schema/context" 
+  xmlns:tx="http://www.springframework.org/schema/tx"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+  xsi:schemaLocation="http://www.springframework.org/schema/tx
+         http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+         http://www.osgi.org/xmlns/blueprint/v1.0.0
+         http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+  <!-- Enable configuration by Java annotations to avoid XML as much as possible. -->
+  <context:annotation-config/>
+  <tx:annotation-driven/>
+  
+  <bean class="com.googlecode.osgienterprise.geminitx.library.service.LibrarySpringConfig"/>
+  
+  <!--bean id="simpleLibraryService" class="com.googlecode.osgienterprise.geminitx.library.service.SimpleLibraryService"/-->
+
+  <service ref="simpleLibraryService" auto-export="interfaces"/>
+  <service ref="transactionManager" auto-export="interfaces"/>
+
+  <reference id="entityManagerFactory" interface="javax.persistence.EntityManagerFactory"/>
+  <reference id="dataSource" interface="javax.sql.DataSource"/>
+
+</blueprint>

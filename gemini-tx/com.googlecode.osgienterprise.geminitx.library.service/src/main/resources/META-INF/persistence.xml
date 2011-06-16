@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+  <persistence-unit name="library" transaction-type="RESOURCE_LOCAL">
+    <!--jta-data-source>jdbc/library</jta-data-source-->
+    <non-jta-data-source>osgi:service/javax.sql.DataSource</non-jta-data-source>
+    <class>com.blogspot.hwellmann.dm.library.Author</class>
+    <class>com.blogspot.hwellmann.dm.library.Book</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <property name="openjpa.Log" value="DefaultLevel=INFO"/>
+      <property name="openjpa.RuntimeUnenhancedClasses" value="supported"/>
+      <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema"/>      
+    </properties>
+  </persistence-unit>
+
+</persistence>

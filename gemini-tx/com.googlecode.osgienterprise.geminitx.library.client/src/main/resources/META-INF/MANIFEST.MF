@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Client
+Bundle-SymbolicName: com.blogspot.hwellmann.dm.client
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: com.blogspot.hwellmann.dm.library,
+ javax.annotation,
+ javax.inject;version="1.0.0",
+ javax.persistence;version="1.1.0",
+ org.slf4j;version="1.6.1",
+ org.springframework.transaction;version="3.0.5.RELEASE",
+ org.springframework.transaction.annotation;version="3.0.5.RELEASE"
+Require-Bundle: org.apache.servicemix.bundles.aopalliance;bundle-version="1.0.0",
+ org.springframework.aop;bundle-version="3.0.5",
+ org.apache.servicemix.bundles.cglib;bundle-version="2.2.0"
