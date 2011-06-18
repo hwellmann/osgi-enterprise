@@ -17,12 +17,7 @@
  */
 package com.googlecode.osgienterprise.library.test;
 
-import static org.ops4j.pax.exam.CoreOptions.felix;
-import static org.ops4j.pax.exam.CoreOptions.junitBundles;
-import static org.ops4j.pax.exam.CoreOptions.keepCaches;
-import static org.ops4j.pax.exam.CoreOptions.mavenBundle;
-import static org.ops4j.pax.exam.CoreOptions.options;
-import static org.ops4j.pax.exam.CoreOptions.workingDirectory;
+import static org.ops4j.pax.exam.CoreOptions.*;
 
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.junit.Configuration;
@@ -60,7 +55,7 @@ public class OpenJpaOsgiTest extends AbstractLibraryTest
         mavenBundle("commons-collections", "commons-collections").versionAsInProject(),
         mavenBundle("commons-pool", "commons-pool").versionAsInProject(),
         mavenBundle("commons-dbcp", "commons-dbcp").versionAsInProject(),
-        mavenBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.serp"),
+        mavenBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.serp").versionAsInProject(),
 
         // Aries JPA and JNDI services and dependencies
         mavenBundle("org.apache.aries", "org.apache.aries.util").versionAsInProject(),
@@ -73,9 +68,9 @@ public class OpenJpaOsgiTest extends AbstractLibraryTest
         mavenBundle("org.apache.aries.proxy", "org.apache.aries.proxy.impl").versionAsInProject(),
         mavenBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.cglib").versionAsInProject(),
         // Database 
-        mavenBundle("org.apache.derby", "derby", "10.8.1.2"),
+        mavenBundle("org.apache.derby", "derby").versionAsInProject(),
         
-        // Gemini Blueprint
+        // Gemini Blueprint and dependencies
         mavenBundle("org.eclipse.gemini.blueprint", "gemini-blueprint-io").versionAsInProject(),
         mavenBundle("org.eclipse.gemini.blueprint", "gemini-blueprint-core").versionAsInProject(),
         mavenBundle("org.eclipse.gemini.blueprint", "gemini-blueprint-extender").versionAsInProject(),
@@ -92,23 +87,31 @@ public class OpenJpaOsgiTest extends AbstractLibraryTest
 
 
         // Logging
-        mavenBundle("org.slf4j", "slf4j-api", "1.6.1"),
-        mavenBundle("ch.qos.logback", "logback-core", "0.9.29"),
-        mavenBundle("ch.qos.logback", "logback-classic", "0.9.29"),
+        mavenBundle("org.slf4j", "slf4j-api").versionAsInProject(),
+        mavenBundle("ch.qos.logback", "logback-core").versionAsInProject(),
+        mavenBundle("ch.qos.logback", "logback-classic").versionAsInProject(),
         
-        // OSGi Compendium and Declarative Services         
-        //mavenBundle("org.osgi", "org.osgi.compendium", "4.2.0"),
-        //mavenBundle("org.apache.felix", "org.apache.felix.scr", "1.6.0"),
-
-        
-        
-        // Run all tests both on Felix and Equinox
-        //felix().version("2.0.1"),
+        // JUnit for Pax Exam
         junitBundles(),
-        //equinox().version("3.6.0"),
-        felix(),
-        workingDirectory("/tmp/pax")
-        //keepCaches()
+        
+        /*
+         * TODO This test currently does not run on Equinox, since the optional package import
+         * org.eclipse.gemini.blueprint.blueprint.container in gemini-bluepring-extender remains unwired. 
+         * This seems to be caused by package overlap with the osgi.cmpn bundle automatically 
+         * provisioned by Pax Exam, and there does not seem to be an easy way to suppress this.
+         * 
+         * The funny thing is, after changing the package import to mandatory by manually editing
+         * the gemini-blueprint-extender manifest, Equinox wires the import, and the test
+         * runs successfully.
+         */
+        felix()
+        
+        /* 
+         * Uncomment and edit the following options for diagnosis to see the bundles
+         * provisioned by Pax Exam and to restart the framework manually after Pax Exam has finished.  
+         */
+        // workingDirectory("/tmp/pax")
+        // keepCaches()
         );
         return options;
     }
