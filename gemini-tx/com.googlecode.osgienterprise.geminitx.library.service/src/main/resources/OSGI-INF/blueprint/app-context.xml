@@ -6,22 +6,23 @@
   xsi:schemaLocation="http://www.springframework.org/schema/tx
          http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
          http://www.osgi.org/xmlns/blueprint/v1.0.0
-         http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
-         http://www.springframework.org/schema/context
-         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+         http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
 
-  <!-- Enable configuration by Java annotations to avoid XML as much as possible. -->
-  <context:annotation-config/>
-  <tx:annotation-driven/>
   
-  <bean class="com.googlecode.osgienterprise.geminitx.library.service.LibrarySpringConfig"/>
   
-  <!--bean id="simpleLibraryService" class="com.googlecode.osgienterprise.geminitx.library.service.SimpleLibraryService"/-->
+  <bean id="libraryService" class="com.googlecode.osgienterprise.geminitx.library.service.PersistentLibraryService"/>
 
-  <service ref="simpleLibraryService" auto-export="interfaces"/>
+  <service ref="libraryService" auto-export="interfaces"/>
   <service ref="transactionManager" auto-export="interfaces"/>
 
   <reference id="entityManagerFactory" interface="javax.persistence.EntityManagerFactory"/>
   <reference id="dataSource" interface="javax.sql.DataSource"/>
+
+  <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+  <tx:annotation-driven/>
+  <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <property name="entityManagerFactory" ref="entityManagerFactory"/>
+  </bean>
+
 
 </blueprint>

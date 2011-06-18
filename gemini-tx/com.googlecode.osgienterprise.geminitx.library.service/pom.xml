@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <artifactId>gemini-tx</artifactId>
@@ -13,14 +14,6 @@
     <dependency>
       <groupId>org.apache.geronimo.specs</groupId>
       <artifactId>geronimo-jpa_2.0_spec</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.geronimo.specs</groupId>
-      <artifactId>geronimo-atinject_1.0_spec</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
@@ -38,29 +31,21 @@
             <_nouses>true</_nouses>
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
             <Meta-Persistence>META-INF/persistence.xml</Meta-Persistence>
-            <Require-Bundle>org.apache.servicemix.bundles.aopalliance,
-              org.springframework.context, 
+            <Require-Bundle>
+              org.apache.servicemix.bundles.aopalliance,
               org.springframework.aop,
+              org.springframework.beans,
+              org.springframework.context,
+              org.springframework.orm,
+              org.springframework.transaction,
               org.apache.openjpa 
-            </Require-Bundle>            
+            </Require-Bundle>
             <Import-Package>
- javax.persistence.criteria,
- javax.persistence.metamodel,
- javax.persistence.spi,
- javax.transaction,
- net.sf.cglib.core,
- net.sf.cglib.proxy,
- net.sf.cglib.reflect,
- org.apache.derby.jdbc,
- org.springframework.beans.factory.annotation,
- org.springframework.context.annotation,
- org.springframework.context.weaving,
- org.springframework.instrument.classloading,
- org.springframework.jdbc.datasource,
- org.springframework.orm.jpa,
- org.springframework.orm.jpa.vendor,
- org.springframework.transaction,
- org.springframework.transaction.annotation, *
+              javax.persistence.criteria,
+              javax.persistence.metamodel,
+              javax.persistence.spi,
+              javax.transaction,
+              org.apache.derby.jdbc, *
             </Import-Package>
           </instructions>
         </configuration>
@@ -104,5 +89,5 @@
       </build>
     </profile>
   </profiles>
-  
+
 </project>

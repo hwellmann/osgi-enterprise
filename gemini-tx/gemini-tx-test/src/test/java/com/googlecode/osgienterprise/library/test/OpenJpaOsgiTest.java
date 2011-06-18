@@ -90,7 +90,6 @@ public class OpenJpaOsgiTest extends AbstractLibraryTest
         mavenBundle("org.springframework", "spring-tx").versionAsInProject(),
         mavenBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.aopalliance").versionAsInProject(),
 
-        mavenBundle("org.apache.geronimo.specs", "geronimo-atinject_1.0_spec").versionAsInProject(),
 
         // Logging
         mavenBundle("org.slf4j", "slf4j-api", "1.6.1"),
@@ -108,8 +107,8 @@ public class OpenJpaOsgiTest extends AbstractLibraryTest
         junitBundles(),
         //equinox().version("3.6.0"),
         felix(),
-        workingDirectory("/tmp/pax"),
-        keepCaches()
+        workingDirectory("/tmp/pax")
+        //keepCaches()
         );
         return options;
     }

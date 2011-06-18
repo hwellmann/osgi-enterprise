@@ -28,7 +28,6 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
-            <_nouses>true</_nouses>
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
             <Import-Package>!com.googlecode.osgienterprise.geminitx.library, *</Import-Package>
             <Require-Bundle>
