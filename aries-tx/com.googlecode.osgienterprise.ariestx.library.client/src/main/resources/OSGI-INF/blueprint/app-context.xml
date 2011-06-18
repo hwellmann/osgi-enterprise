@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+  xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.0.0"
+  xmlns:jpa="http://aries.apache.org/xmlns/jpa/v1.1.0"
+  xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0
+         http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+
+  <bean id="libraryClient" class="com.googlecode.osgienterprise.ariestx.library.client.LibraryClient">
+    <property name="libraryService" ref="libraryService"/>
+    <property name="authorCreator" ref="authorCreator"/>
+  </bean>
+
+  <bean id="authorCreator" class="com.googlecode.osgienterprise.ariestx.library.client.AuthorCreator">
+    <jpa:context property="entityManager" unitname="library" />
+    <tx:transaction method="*" value="Required" />
+  </bean>
+  
+  <reference id="libraryService" interface="com.googlecode.osgienterprise.ariestx.library.service.LibraryService"/>
+
+  <service ref="libraryClient" interface="com.googlecode.osgienterprise.ariestx.library.client.LibraryClient"/>
+
+
+
+</blueprint>

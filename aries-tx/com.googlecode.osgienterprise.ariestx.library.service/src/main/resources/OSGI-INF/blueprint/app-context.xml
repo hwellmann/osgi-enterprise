@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+  xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.0.0"
+  xmlns:jpa="http://aries.apache.org/xmlns/jpa/v1.1.0"
+  xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0
+         http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+
+  
+  
+  <bean id="libraryService" class="com.googlecode.osgienterprise.ariestx.library.service.PersistentLibraryService">
+    <jpa:context property="entityManager" unitname="library" />
+    <tx:transaction method="*" value="Required" />
+  </bean>
+
+  <service ref="libraryService" auto-export="interfaces"/>
+
+</blueprint>

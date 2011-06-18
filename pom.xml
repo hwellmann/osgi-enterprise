@@ -20,6 +20,7 @@
     <module>com.googlecode.osgienterprise.logback.config</module>
     <module>com.googlecode.osgienterprise.jpa.datanucleus</module>
     <module>gemini-tx</module>
+    <module>aries-tx</module>
   </modules>
 
   <dependencyManagement>
