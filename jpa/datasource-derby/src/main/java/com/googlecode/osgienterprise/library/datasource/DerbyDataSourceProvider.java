@@ -17,6 +17,9 @@
  */
 package com.googlecode.osgienterprise.library.datasource;
 
+import java.util.Dictionary;
+import java.util.Hashtable;
+
 import javax.sql.DataSource;
 
 import org.apache.derby.jdbc.EmbeddedDataSource;
@@ -38,7 +41,9 @@ public class DerbyDataSourceProvider implements BundleActivator {
     public void start(BundleContext context) throws Exception {
         log.info("creating data source");
         ds = createDataSource();
-        context.registerService(DataSource.class.getName(), ds, null);
+        Dictionary<String, String> props = new Hashtable<String, String>();
+        props.put("osgi.jndi.service.name", "jdbc/library");
+        context.registerService(DataSource.class.getName(), ds, props);
     }
 
     public void stop(BundleContext context) throws Exception {
