@@ -22,6 +22,9 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
+import com.googlecode.osgienterprise.geminitx.library.model.Author;
+import com.googlecode.osgienterprise.geminitx.library.model.Book;
+
 /**
  * NOTE: By the EJB 3.1 specification, all public business methods are transactional by default,
  * with a REQUIRED transaction type, so the <code>@TransactionAttribute</code> annotations on the

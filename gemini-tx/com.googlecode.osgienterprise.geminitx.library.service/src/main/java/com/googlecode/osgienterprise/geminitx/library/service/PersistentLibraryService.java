@@ -25,6 +25,9 @@ import javax.persistence.TypedQuery;
 
 import org.springframework.transaction.annotation.Transactional;
 
+import com.googlecode.osgienterprise.geminitx.library.model.Author;
+import com.googlecode.osgienterprise.geminitx.library.model.Book;
+
 public class PersistentLibraryService implements LibraryService {
     
     private static final long serialVersionUID = 1L;

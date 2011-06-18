@@ -20,6 +20,8 @@ package com.googlecode.osgienterprise.geminitx.library.service;
 import java.io.Serializable;
 import java.util.List;
 
+import com.googlecode.osgienterprise.geminitx.library.model.Book;
+
 public interface LibraryService extends Serializable {
         
     void fillLibrary();

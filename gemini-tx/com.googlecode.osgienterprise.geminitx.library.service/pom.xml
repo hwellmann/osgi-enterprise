@@ -7,6 +7,7 @@
   </parent>
   <groupId>com.googlecode.osgi-enterprise.geminitx</groupId>
   <artifactId>com.googlecode.osgienterprise.geminitx.library.service</artifactId>
+  <packaging>bundle</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
     <dependency>
@@ -26,4 +27,82 @@
       <artifactId>spring-orm</artifactId>
     </dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <_nouses>true</_nouses>
+            <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+            <Meta-Persistence>META-INF/persistence.xml</Meta-Persistence>
+            <Require-Bundle>org.apache.servicemix.bundles.aopalliance,
+              org.springframework.context, 
+              org.springframework.aop,
+              org.apache.openjpa 
+            </Require-Bundle>            
+            <Import-Package>
+ javax.persistence.criteria,
+ javax.persistence.metamodel,
+ javax.persistence.spi,
+ javax.transaction,
+ net.sf.cglib.core,
+ net.sf.cglib.proxy,
+ net.sf.cglib.reflect,
+ org.apache.derby.jdbc,
+ org.springframework.beans.factory.annotation,
+ org.springframework.context.annotation,
+ org.springframework.context.weaving,
+ org.springframework.instrument.classloading,
+ org.springframework.jdbc.datasource,
+ org.springframework.orm.jpa,
+ org.springframework.orm.jpa.vendor,
+ org.springframework.transaction,
+ org.springframework.transaction.annotation, *
+            </Import-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>openjpa</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.apache.openjpa</groupId>
+          <artifactId>openjpa</artifactId>
+        </dependency>
+      </dependencies>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>openjpa-maven-plugin</artifactId>
+            <version>1.1</version>
+            <executions>
+              <execution>
+                <id>enhancer</id>
+                <phase>process-classes</phase>
+                <goals>
+                  <goal>enhance</goal>
+                </goals>
+              </execution>
+            </executions>
+            <dependencies>
+              <dependency>
+                <groupId>org.apache.openjpa</groupId>
+                <artifactId>openjpa-all</artifactId>
+                <version>${openjpa.version}</version>
+              </dependency>
+            </dependencies>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+  
 </project>

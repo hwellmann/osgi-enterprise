@@ -7,6 +7,7 @@
   </parent>
   <groupId>com.googlecode.osgi-enterprise.geminitx</groupId>
   <artifactId>com.googlecode.osgienterprise.geminitx.library.client</artifactId>
+  <packaging>bundle</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
     <dependency>
@@ -19,4 +20,25 @@
       <artifactId>slf4j-api</artifactId>
     </dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <_nouses>true</_nouses>
+            <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+            <Import-Package>!com.googlecode.osgienterprise.geminitx.library, *</Import-Package>
+            <Require-Bundle>
+                org.apache.servicemix.bundles.aopalliance,
+                org.springframework.aop,
+                org.apache.servicemix.bundles.cglib
+            </Require-Bundle>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

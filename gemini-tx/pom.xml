@@ -12,5 +12,6 @@
   <modules>
   	<module>com.googlecode.osgienterprise.geminitx.library.service</module>
   	<module>com.googlecode.osgienterprise.geminitx.library.client</module>
+  	<module>gemini-tx-test</module>
   </modules>
 </project>

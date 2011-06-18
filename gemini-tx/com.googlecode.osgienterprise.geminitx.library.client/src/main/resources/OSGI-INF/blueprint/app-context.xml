@@ -17,7 +17,7 @@
   <bean id="libraryClient" class="com.googlecode.osgienterprise.geminitx.library.client.LibraryClient"/>
   <bean id="authorCreator" class="com.googlecode.osgienterprise.geminitx.library.client.AuthorCreator"/>
   
-  <reference id="simpleLibraryService" interface="com.googlecode.osgienterprise.geminitx.library.LibraryService"/>
+  <reference id="simpleLibraryService" interface="com.googlecode.osgienterprise.geminitx.library.service.LibraryService"/>
   <reference id="entityManagerFactory" interface="javax.persistence.EntityManagerFactory"/>
   <reference id="transactionManager" interface="org.springframework.transaction.PlatformTransactionManager"/>
 

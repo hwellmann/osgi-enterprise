@@ -5,7 +5,7 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import com.googlecode.osgienterprise.geminitx.library.service.Author;
+import com.googlecode.osgienterprise.geminitx.library.model.Author;
 
 public class AuthorCreator
 {

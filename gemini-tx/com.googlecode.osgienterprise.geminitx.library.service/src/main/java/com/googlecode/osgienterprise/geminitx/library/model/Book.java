@@ -15,31 +15,28 @@
  *
  */
 
-package com.googlecode.osgienterprise.geminitx.library.service;
-
-import java.util.HashSet;
-import java.util.Set;
+package com.googlecode.osgienterprise.geminitx.library.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class Author {
+public class Book {
     
     @Id
     @GeneratedValue
-    @Column(name = "author_id")
+    @Column(name = "book_id")
     private int id;
     
-    private String firstName;
+    private String title;
     
-    private String lastName;
-    
-    @OneToMany(mappedBy = "author")
-    private Set<Book> books = new HashSet<Book>();
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private Author author;
 
     public int getId() {
         return id;
@@ -49,28 +46,20 @@ public class Author {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getTitle() {
+        return title;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getLastName() {
-        return lastName;
+    public Author getAuthor() {
+        return author;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public Set<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(Set<Book> books) {
-        this.books = books;
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     @Override
@@ -89,11 +78,10 @@ public class Author {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Author other = (Author) obj;
+        Book other = (Book) obj;
         if (id != other.id)
             return false;
         return true;
     }
-    
-    
+
 }

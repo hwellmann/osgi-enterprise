@@ -15,28 +15,31 @@
  *
  */
 
-package com.googlecode.osgienterprise.geminitx.library.service;
+package com.googlecode.osgienterprise.geminitx.library.model;
+
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
-public class Book {
+public class Author {
     
     @Id
     @GeneratedValue
-    @Column(name = "book_id")
+    @Column(name = "author_id")
     private int id;
     
-    private String title;
+    private String firstName;
     
-    @ManyToOne
-    @JoinColumn(name = "author_id")
-    private Author author;
+    private String lastName;
+    
+    @OneToMany(mappedBy = "author")
+    private Set<Book> books = new HashSet<Book>();
 
     public int getId() {
         return id;
@@ -46,20 +49,28 @@ public class Book {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public Author getAuthor() {
-        return author;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setAuthor(Author author) {
-        this.author = author;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 
     @Override
@@ -78,10 +89,11 @@ public class Book {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Book other = (Book) obj;
+        Author other = (Author) obj;
         if (id != other.id)
             return false;
         return true;
     }
-
+    
+    
 }
