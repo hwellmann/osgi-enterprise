@@ -21,6 +21,7 @@
     <module>com.googlecode.osgienterprise.jpa.datanucleus</module>
     <module>gemini-tx</module>
     <module>aries-tx</module>
+    <module>aries-p2</module>
   </modules>
 
   <dependencyManagement>

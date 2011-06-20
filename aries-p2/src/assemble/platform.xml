@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly xmlns="http://maven.apache.org/POM/4.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/assembly-1.1.0-SNAPSHOT.xsd">
+  <id>platform</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <includeBaseDirectory>true</includeBaseDirectory>
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>plugins</outputDirectory>
+      <includes>
+        <include>org.apache.aries.blueprint:org.apache.aries.blueprint.api</include>
+        <include>org.apache.aries.blueprint:org.apache.aries.blueprint.cm</include>
+        <include>org.apache.aries.blueprint:org.apache.aries.blueprint.core</include>
+        <include>org.apache.aries.jndi:org.apache.aries.jndi.api</include>
+        <include>org.apache.aries.jndi:org.apache.aries.jndi.core</include>
+        <include>org.apache.aries.jndi:org.apache.aries.jndi.url</include>
+        <include>org.apache.aries.jpa:org.apache.aries.jpa.api</include>
+        <include>org.apache.aries.jpa:org.apache.aries.jpa.blueprint.aries</include>
+        <include>org.apache.aries.jpa:org.apache.aries.jpa.container</include>
+        <include>org.apache.aries.jpa:org.apache.aries.jpa.container.context</include>
+        <include>org.apache.aries.proxy:org.apache.aries.proxy.api</include>
+        <include>org.apache.aries.proxy:org.apache.aries.proxy.impl</include>
+        <include>org.apache.aries.transaction:org.apache.aries.transaction.blueprint</include>
+        <include>org.apache.aries.transaction:org.apache.aries.transaction.manager</include>
+        <include>org.apache.aries.transaction:org.apache.aries.transaction.wrappers</include>
+        <include>org.apache.aries:org.apache.aries.util</include>
+
+        <include>org.apache.openjpa:openjpa</include>
+        <include>org.apache.geronimo.specs:geronimo-jpa_2.0_spec</include>
+        <include>org.apache.geronimo.specs:geronimo-jta_1.1_spec</include>
+        <include>commons-lang:commons-lang</include>
+        <include>commons-collections:commons-collections</include>
+        <include>commons-pool:commons-pool</include>
+        <include>commons-dbcp:commons-dbcp</include>
+        <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.serp</include>
+
+        <include>asm:asm-all</include>        
+        <include>org.apache.derby:derby</include>
+        <include>org.slf4j:slf4j-api</include>
+        <include>ch.qos.logback:logback-core</include>
+        <include>ch.qos.logback:logback-classic</include>
+
+        <include>org.sonatype.tycho:org.eclipse.osgi</include>        
+        <include>org.osgi:org.osgi.compendium</include>        
+        
+      </includes>
+    </dependencySet>
+  </dependencySets>
+</assembly>

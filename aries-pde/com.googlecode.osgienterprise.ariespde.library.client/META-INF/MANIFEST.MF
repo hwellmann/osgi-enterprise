@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Client
+Bundle-SymbolicName: com.googlecode.osgienterprise.ariespde.library.client
+Bundle-Version: 0.0.1
+Bundle-Vendor: GOOGLECODE
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: com.googlecode.osgienterprise.ariespde.library.model,
+ com.googlecode.osgienterprise.ariespde.library.service,
+ javax.persistence;version="1.1.0",
+ org.slf4j;version="1.6.1"
