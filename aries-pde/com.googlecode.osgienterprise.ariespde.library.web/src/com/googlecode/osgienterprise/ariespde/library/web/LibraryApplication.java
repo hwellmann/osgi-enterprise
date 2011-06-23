@@ -2,16 +2,19 @@ package com.googlecode.osgienterprise.ariespde.library.web;
 
 import org.apache.wicket.Page;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.osgi.framework.BundleContext;
 
 import com.googlecode.osgienterprise.wicket.OsgiClassResolver;
-import com.googlecode.osgienterprise.wicket.OsgiServiceInjector;
+import com.googlecode.osgienterprise.wicket.OsgiComponentInjector;
 
 public class LibraryApplication extends WebApplication {
 
     @Override
     protected void init() {
         super.init();
-        addComponentInstantiationListener(new OsgiServiceInjector(this));
+        BundleContext bc = (BundleContext) getServletContext().getAttribute("osgi-bundlecontext");
+        addComponentInstantiationListener(new OsgiComponentInjector(bc));
+        //addComponentInstantiationListener(new OsgiServiceInjector(this));
         
         getApplicationSettings().setClassResolver(new OsgiClassResolver());
     }

@@ -36,33 +36,42 @@ public class ServiceLookup {
         return getOsgiService(bc, type, null, DEFAULT_TIMEOUT);
     }
 
+    public static <T> T getOsgiService(BundleContext bc, String className) {
+        return getOsgiService(bc, className, null, DEFAULT_TIMEOUT);
+    }
+
     public static <T> T getOsgiService(BundleContext bc, Class<T> type, String filter) {
         return getOsgiService(bc, type, filter, DEFAULT_TIMEOUT);
     }
 
     public static <T> T getOsgiService(BundleContext bc, Class<T> type, String filter, long timeout) {
+        return getOsgiService(bc, type.getName(), filter, timeout);
+    }
+    
+    @SuppressWarnings("unchecked")
+    public static <T> T getOsgiService(BundleContext bc, String className, String filter, long timeout) {
         ServiceTracker tracker = null;
         try {
             String flt;
             if (filter != null) {
                 if (filter.startsWith("(")) {
-                    flt = "(&(" + Constants.OBJECTCLASS + "=" + type.getName() + ")" + filter + ")";
+                    flt = "(&(" + Constants.OBJECTCLASS + "=" + className + ")" + filter + ")";
                 }
                 else {
-                    flt = "(&(" + Constants.OBJECTCLASS + "=" + type.getName() + ")(" + filter + "))";
+                    flt = "(&(" + Constants.OBJECTCLASS + "=" + className + ")(" + filter + "))";
                 }
             }
             else {
-                flt = "(" + Constants.OBJECTCLASS + "=" + type.getName() + ")";
+                flt = "(" + Constants.OBJECTCLASS + "=" + className + ")";
             }
             Filter osgiFilter = FrameworkUtil.createFilter(flt);
             tracker = new ServiceTracker(bc, osgiFilter, null);
             tracker.open();
-            Object svc = type.cast(tracker.waitForService(timeout));
+            Object svc = tracker.waitForService(timeout);
             if (svc == null) {
                 throw new RuntimeException("Gave up waiting for service " + flt);
             }
-            return type.cast(svc);
+            return (T) svc;
         }
         catch (InvalidSyntaxException e) {
             throw new IllegalArgumentException("Invalid filter", e);

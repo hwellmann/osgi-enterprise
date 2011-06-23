@@ -158,6 +158,11 @@
       <version>1.4.17</version>
     </dependency>
     <dependency>
+      <groupId>org.apache.wicket</groupId>
+      <artifactId>wicket-ioc</artifactId>
+      <version>1.4.17</version>
+    </dependency>
+    <dependency>
       <groupId>org.apache.geronimo.specs</groupId>
       <artifactId>geronimo-servlet_2.5_spec</artifactId>
       <version>1.2</version>

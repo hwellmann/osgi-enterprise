@@ -36,6 +36,7 @@
         <include>commons-pool:commons-pool</include>
         <include>commons-dbcp:commons-dbcp</include>
         <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.serp</include>
+        <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.cglib</include>
 
         <include>asm:asm-all</include>        
         <include>org.apache.derby:derby</include>
@@ -49,6 +50,7 @@
         <include>org.ops4j.pax.web:pax-web-extender-war</include>
         <include>org.ops4j.pax.web:pax-web-jetty-bundle</include>
         <include>org.apache.wicket:wicket</include>
+        <include>org.apache.wicket:wicket-ioc</include>
         <include>org.apache.geronimo.specs:geronimo-servlet_2.5_spec</include>
         <include>org.apache.geronimo.specs:geronimo-atinject_1.0_spec</include>
       </includes>
