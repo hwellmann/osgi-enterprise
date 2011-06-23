@@ -45,7 +45,12 @@
 
         <include>org.sonatype.tycho:org.eclipse.osgi</include>        
         <include>org.osgi:org.osgi.compendium</include>        
-        
+
+        <include>org.ops4j.pax.web:pax-web-extender-war</include>
+        <include>org.ops4j.pax.web:pax-web-jetty-bundle</include>
+        <include>org.apache.wicket:wicket</include>
+        <include>org.apache.geronimo.specs:geronimo-servlet_2.5_spec</include>
+        <include>org.apache.geronimo.specs:geronimo-atinject_1.0_spec</include>
       </includes>
     </dependencySet>
   </dependencySets>

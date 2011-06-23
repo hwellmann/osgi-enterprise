@@ -20,6 +20,7 @@ package com.googlecode.osgienterprise.ariespde.library.service;
 import java.io.Serializable;
 import java.util.List;
 
+import com.googlecode.osgienterprise.ariespde.library.model.Author;
 import com.googlecode.osgienterprise.ariespde.library.model.Book;
 
 public interface LibraryService extends Serializable {
@@ -28,4 +29,6 @@ public interface LibraryService extends Serializable {
     List<Book> findBooksByAuthor(String lastName);
     List<Book> findBooksByTitle(String title);
     long getNumBooks();
+    long getNumAuthors();
+    void createAuthor(Author author);
 }

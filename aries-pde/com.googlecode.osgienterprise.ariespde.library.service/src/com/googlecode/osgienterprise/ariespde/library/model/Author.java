@@ -17,6 +17,7 @@
 
 package com.googlecode.osgienterprise.ariespde.library.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,7 +28,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Author {
+public class Author implements Serializable {
     
     @Id
     @GeneratedValue

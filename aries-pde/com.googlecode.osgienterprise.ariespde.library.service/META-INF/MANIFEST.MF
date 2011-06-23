@@ -6,6 +6,8 @@ Bundle-Version: 0.0.1
 Bundle-Vendor: GOOGLECODE
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Meta-Persistence: META-INF/persistence.xml
-Import-Package: javax.persistence;version="1.1.0"
+Import-Package: javax.persistence;version="1.1.0",
+ org.apache.openjpa.enhance;version="2.1.0",
+ org.apache.openjpa.util;version="2.1.0"
 Export-Package: com.googlecode.osgienterprise.ariespde.library.model,
  com.googlecode.osgienterprise.ariespde.library.service

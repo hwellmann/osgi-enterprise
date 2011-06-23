@@ -88,4 +88,16 @@ public class PersistentLibraryService implements LibraryService {
         Long numBooks = (Long) em.createQuery(jpql).getSingleResult();
         return numBooks;
     }
+
+    public long getNumAuthors()
+    {
+        String jpql = "select count(a) from Author a";
+        Long numAuthors = (Long) em.createQuery(jpql).getSingleResult();
+        return numAuthors;
+    }
+
+    @Override
+    public void createAuthor(Author author) {
+        em.persist(author);
+    }
 }

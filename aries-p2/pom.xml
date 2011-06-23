@@ -109,7 +109,6 @@
     <dependency>
       <groupId>org.apache.geronimo.specs</groupId>
       <artifactId>geronimo-jta_1.1_spec</artifactId>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.aries.jndi</groupId>
@@ -142,6 +141,31 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.ops4j.pax.web</groupId>
+      <artifactId>pax-web-extender-war</artifactId>
+      <version>0.8.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.ops4j.pax.web</groupId>
+      <artifactId>pax-web-jetty-bundle</artifactId>
+      <version>0.8.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.wicket</groupId>
+      <artifactId>wicket</artifactId>
+      <version>1.4.17</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-servlet_2.5_spec</artifactId>
+      <version>1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-atinject_1.0_spec</artifactId>
+      <version>1.0</version>
     </dependency>
   </dependencies>
   

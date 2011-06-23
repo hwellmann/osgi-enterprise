@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Web
+Bundle-SymbolicName: com.googlecode.osgienterprise.ariespde.library.web
+Bundle-Version: 0.0.1
+Bundle-Vendor: GOOGLECODE
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Web-ContextPath: /library
+Import-Package: com.googlecode.osgienterprise.ariespde.library.model,
+ com.googlecode.osgienterprise.ariespde.library.service,
+ javax.inject;version="1.0.0",
+ javax.servlet;version="2.5.0",
+ javax.servlet.http;version="2.5.0",
+ org.osgi.framework;version="1.5.0",
+ org.osgi.util.tracker;version="1.4.0",
+ org.slf4j;version="1.6.1"
+Require-Bundle: org.apache.wicket.wicket;bundle-version="1.4.17"
