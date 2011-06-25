@@ -17,67 +17,43 @@
  */
 package com.googlecode.osgienterprise.wicket;
 
+import org.apache.wicket.WicketRuntimeException;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.Constants;
-import org.osgi.framework.Filter;
-import org.osgi.framework.FrameworkUtil;
-import org.osgi.framework.InvalidSyntaxException;
 import org.osgi.util.tracker.ServiceTracker;
 
 public class ServiceLookup {
 
     public static final long DEFAULT_TIMEOUT = 10000;
 
-    public static <T> T getOsgiService(BundleContext bc, Class<T> type, long timeout) {
-        return getOsgiService(bc, type, null, timeout);
-    }
-
     public static <T> T getOsgiService(BundleContext bc, Class<T> type) {
-        return getOsgiService(bc, type, null, DEFAULT_TIMEOUT);
+        return getOsgiService(bc, type, DEFAULT_TIMEOUT);
     }
 
-    public static <T> T getOsgiService(BundleContext bc, String className) {
-        return getOsgiService(bc, className, null, DEFAULT_TIMEOUT);
+    public static <T> T getOsgiService(BundleContext bc, Class<T> type, long timeout) {
+        return getOsgiService(bc, type.getName(), timeout);
     }
 
-    public static <T> T getOsgiService(BundleContext bc, Class<T> type, String filter) {
-        return getOsgiService(bc, type, filter, DEFAULT_TIMEOUT);
-    }
-
-    public static <T> T getOsgiService(BundleContext bc, Class<T> type, String filter, long timeout) {
-        return getOsgiService(bc, type.getName(), filter, timeout);
-    }
-    
     @SuppressWarnings("unchecked")
-    public static <T> T getOsgiService(BundleContext bc, String className, String filter, long timeout) {
-        ServiceTracker tracker = null;
+    public static <T> T getOsgiService(BundleContext bc, String className, long timeout) {
+        ServiceTracker tracker = new ServiceTracker(bc, className, null);
         try {
-            String flt;
-            if (filter != null) {
-                if (filter.startsWith("(")) {
-                    flt = "(&(" + Constants.OBJECTCLASS + "=" + className + ")" + filter + ")";
-                }
-                else {
-                    flt = "(&(" + Constants.OBJECTCLASS + "=" + className + ")(" + filter + "))";
-                }
-            }
-            else {
-                flt = "(" + Constants.OBJECTCLASS + "=" + className + ")";
-            }
-            Filter osgiFilter = FrameworkUtil.createFilter(flt);
-            tracker = new ServiceTracker(bc, osgiFilter, null);
             tracker.open();
             Object svc = tracker.waitForService(timeout);
             if (svc == null) {
-                throw new RuntimeException("Gave up waiting for service " + flt);
+                throw new WicketRuntimeException("Gave up waiting for service " + className);
             }
             return (T) svc;
         }
-        catch (InvalidSyntaxException e) {
-            throw new IllegalArgumentException("Invalid filter", e);
+        catch (InterruptedException exc) {
+            throw new WicketRuntimeException(exc);
         }
-        catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        finally {
+            tracker.close();
         }
     }
+
+    public static <T> T getOsgiService(BundleContext bc, String className) {
+        return getOsgiService(bc, className, DEFAULT_TIMEOUT);
+    }
+
 }

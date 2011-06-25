@@ -10,7 +10,6 @@ import org.osgi.framework.BundleContext;
 
 public class OsgiFieldValueFactory implements IFieldValueFactory {
     
-    private final BundleContext context;
     private final boolean wrapInProxies;
 
     /**
@@ -18,7 +17,7 @@ public class OsgiFieldValueFactory implements IFieldValueFactory {
      *            spring context locator
      */
     public OsgiFieldValueFactory(BundleContext context) {
-        this(context, true);
+        this(true);
     }
 
     /**
@@ -28,11 +27,7 @@ public class OsgiFieldValueFactory implements IFieldValueFactory {
      *            whether or not wicket should wrap dependencies with specialized proxies that can
      *            be safely serialized. in most cases this should be set to true.
      */
-    public OsgiFieldValueFactory(BundleContext context, boolean wrapInProxies) {
-        if (context == null) {
-            throw new IllegalArgumentException("[context] argument cannot be null");
-        }
-        this.context = context;
+    public OsgiFieldValueFactory(boolean wrapInProxies) {
         this.wrapInProxies = wrapInProxies;
     }
 
