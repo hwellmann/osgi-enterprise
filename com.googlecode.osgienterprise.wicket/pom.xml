@@ -27,18 +27,9 @@
           <instructions>
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
             <Export-Package>org.apache.wicket.*;version="1.4.17"</Export-Package>
-            <Import-Package>javax.*;resolution:=optional, junit.framework;resolution:=optional, !sun.misc, !sun.reflect, *</Import-Package>
+            <Import-Package>javax.portlet.*;resolution:=optional, junit.framework;resolution:=optional, !sun.misc, !sun.reflect, *</Import-Package>
           </instructions>
         </configuration>
-        <!--executions>
-          <execution>
-            <id>manifest</id>
-            <phase>process-classes</phase>
-            <goals>
-              <goal>manifest</goal>
-            </goals>
-          </execution>
-        </executions-->
       </plugin>
     </plugins>
   </build>
