@@ -9,7 +9,7 @@
   Author: Harald Wellmann
 -->
 
-<project name="osgi-enterprise-ariespde-enhance">
+<project name="osgi-enterprise-ariespde-enhance" default="post.compile.@dot">
   
   
   <!-- ===================================================================== -->
