@@ -13,7 +13,6 @@ public class BooksPage extends WebPage {
     private LibraryService libraryService;
     
     public BooksPage() {
-        add(new Label("message", "Wicket on Aries"));
         add(new Label("numBooks", Long.toString(libraryService.getNumBooks())));
         add(new Label("numAuthors", Long.toString(libraryService.getNumAuthors())));
     }

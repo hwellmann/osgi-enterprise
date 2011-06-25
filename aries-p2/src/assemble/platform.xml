@@ -49,8 +49,10 @@
 
         <include>org.ops4j.pax.web:pax-web-extender-war</include>
         <include>org.ops4j.pax.web:pax-web-jetty-bundle</include>
-        <include>org.apache.wicket:wicket</include>
-        <include>org.apache.wicket:wicket-ioc</include>
+        <!--include>org.apache.wicket:wicket</include-->
+        <!--include>org.apache.wicket:wicket-ioc</include-->
+        <include>com.googlecode.osgi-enterprise:com.googlecode.osgienterprise.wicket</include>
+        <include>com.googlecode.osgi-enterprise:com.googlecode.osgienterprise.wicket.ioc</include>
         <include>org.apache.geronimo.specs:geronimo-servlet_2.5_spec</include>
         <include>org.apache.geronimo.specs:geronimo-atinject_1.0_spec</include>
       </includes>

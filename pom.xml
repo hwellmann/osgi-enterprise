@@ -22,6 +22,8 @@
     <module>gemini-tx</module>
     <module>aries-tx</module>
     <module>aries-p2</module>
+    <module>com.googlecode.osgienterprise.wicket</module>
+    <module>com.googlecode.osgienterprise.wicket.ioc</module>
   </modules>
 
   <dependencyManagement>

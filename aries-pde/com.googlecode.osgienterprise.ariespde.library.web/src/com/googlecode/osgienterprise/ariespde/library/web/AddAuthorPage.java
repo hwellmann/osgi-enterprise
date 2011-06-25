@@ -1,5 +1,7 @@
 package com.googlecode.osgienterprise.ariespde.library.web;
 
+import java.io.IOException;
+
 import javax.inject.Inject;
 
 import org.apache.wicket.markup.html.WebPage;
@@ -19,6 +21,8 @@ public class AddAuthorPage extends WebPage {
     
     public class AddAuthorForm extends Form<Author> {
 
+        private static final long serialVersionUID = 1L;
+
         public AddAuthorForm(String id, IModel<Author> model) {
             super(id, model);
             
@@ -30,6 +34,7 @@ public class AddAuthorPage extends WebPage {
         @Override
         protected void onSubmit() {
             Author author = getModelObject();
+            author.setId(0);
             libraryService.createAuthor(author);
             setResponsePage(BooksPage.class);
         }
@@ -41,5 +46,20 @@ public class AddAuthorPage extends WebPage {
         
         add(new AddAuthorForm("addAuthor", new CompoundPropertyModel<Author>(author)));
     }
+    
+    private void writeObject(java.io.ObjectOutputStream out)
+    throws IOException {
+        out.defaultWriteObject();
+    }
 
+    private void readObject(java.io.ObjectInputStream in)
+    throws IOException {
+        try {
+            in.defaultReadObject();
+        }
+        catch (ClassNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }               
+    }
 }

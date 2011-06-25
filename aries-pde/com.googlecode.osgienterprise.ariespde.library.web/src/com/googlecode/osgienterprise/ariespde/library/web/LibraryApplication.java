@@ -16,6 +16,9 @@ public class LibraryApplication extends WebApplication {
         addComponentInstantiationListener(new OsgiComponentInjector(bc));
         //addComponentInstantiationListener(new OsgiServiceInjector(this));
         
+        /*
+         * Not really needed, at least on Jetty. 
+         */
         getApplicationSettings().setClassResolver(new OsgiClassResolver());
     }
     
