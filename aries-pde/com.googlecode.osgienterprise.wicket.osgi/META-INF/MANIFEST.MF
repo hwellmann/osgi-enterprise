@@ -1,9 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Osgi
 Bundle-SymbolicName: com.googlecode.osgienterprise.wicket.osgi
-Bundle-Version: 1.0.0.qualifier
-Bundle-Vendor: GOOGLECODE
+Bundle-Version: 0.0.1
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: javax.inject;version="1.0.0",
  javax.servlet;version="2.5.0",

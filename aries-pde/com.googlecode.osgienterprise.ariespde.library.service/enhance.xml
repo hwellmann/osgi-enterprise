@@ -4,7 +4,7 @@
   
   This script requires the following properties to be set
   platform.install = root folder of target platform (parent of plugins/)
-  target.folder    = bin/folder of the current Eclipse project
+  target.folder    = bin/ folder of the current Eclipse project
   
   Author: Harald Wellmann
 -->
@@ -175,7 +175,7 @@
   </taskdef>
 
   <target name="post.compile.@dot">
-    <openjpac>
+    <openjpac>    	
       <classpath refid="jpa.enhancement.classpath" />
       <fileset dir="${target.folder}">
         <include name="com/googlecode/osgienterprise/ariespde/library/model/*.class"/>

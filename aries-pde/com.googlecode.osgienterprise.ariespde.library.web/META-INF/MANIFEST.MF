@@ -1,9 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Web
 Bundle-SymbolicName: com.googlecode.osgienterprise.ariespde.library.web
 Bundle-Version: 0.0.1
-Bundle-Vendor: GOOGLECODE
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Web-ContextPath: /library
 Import-Package: com.googlecode.osgienterprise.ariespde.library.model,

@@ -12,7 +12,6 @@
       <outputDirectory>plugins</outputDirectory>
       <includes>
         <include>org.apache.aries.blueprint:org.apache.aries.blueprint.api</include>
-        <include>org.apache.aries.blueprint:org.apache.aries.blueprint.cm</include>
         <include>org.apache.aries.blueprint:org.apache.aries.blueprint.core</include>
         <include>org.apache.aries.jndi:org.apache.aries.jndi.api</include>
         <include>org.apache.aries.jndi:org.apache.aries.jndi.core</include>

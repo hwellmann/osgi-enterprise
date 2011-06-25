@@ -1,9 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Derby
 Bundle-SymbolicName: com.googlecode.osgienterprise.ariespde.library.ds.derby
 Bundle-Version: 0.0.1
-Bundle-Vendor: GOOGLECODE
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.apache.derby.jdbc,
  org.osgi.framework;version="1.5.0",

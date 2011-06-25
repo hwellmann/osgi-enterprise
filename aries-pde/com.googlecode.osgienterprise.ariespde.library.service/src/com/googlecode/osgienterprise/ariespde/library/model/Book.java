@@ -29,6 +29,8 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Book implements Serializable {
     
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue
     @Column(name = "book_id")
