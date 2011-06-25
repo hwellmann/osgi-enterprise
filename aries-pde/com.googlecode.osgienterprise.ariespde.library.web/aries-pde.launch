@@ -21,5 +21,5 @@
 <booleanAttribute key="tracing" value="false"/>
 <booleanAttribute key="useCustomFeatures" value="false"/>
 <booleanAttribute key="useDefaultConfigArea" value="true"/>
-<stringAttribute key="workspace_bundles" value="com.googlecode.osgienterprise.ariespde.library.service@default:default,com.googlecode.osgienterprise.ariespde.library.web@default:default,com.googlecode.osgienterprise.ariespde.library.client@default:default,com.googlecode.osgienterprise.ariespde.library.ds.derby@default:default,com.googlecode.osgienterprise.wicket.osgi@default:default"/>
+<stringAttribute key="workspace_bundles" value="com.googlecode.osgienterprise.ariespde.library.service@default:default,com.googlecode.osgienterprise.ariespde.library.web@default:default,com.googlecode.osgienterprise.ariespde.library.client@default:default,com.googlecode.osgienterprise.ariespde.library.ds.derby@default:default,com.googlecode.osgienterprise.wicket.osgi@default:false"/>
 </launchConfiguration>
