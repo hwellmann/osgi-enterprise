@@ -8,6 +8,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Web-ContextPath: /library
 Import-Package: com.googlecode.osgienterprise.ariespde.library.model,
  com.googlecode.osgienterprise.ariespde.library.service,
+ com.googlecode.osgienterprise.wicket,
  javax.inject;version="1.0.0",
  javax.servlet;version="2.5.0",
  javax.servlet.http;version="2.5.0",
