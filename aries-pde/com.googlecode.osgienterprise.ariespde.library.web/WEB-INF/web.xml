@@ -6,7 +6,7 @@
   version="2.5">
   
   
-  <display-name>TCM</display-name>
+  <display-name>Library Demo</display-name>
 
   <filter>
     <filter-name>Wicket</filter-name>
@@ -15,6 +15,14 @@
       <param-name>applicationFactoryClassName</param-name>
       <param-value>com.googlecode.osgienterprise.wicket.OsgiWebApplicationFactory</param-value>
     </init-param>
+    <init-param>
+      <param-name>wicket.osgi.application.name</param-name>
+      <param-value>library</param-value>
+    </init-param>
+    <!--init-param>
+      <param-name>applicationClassName</param-name>
+      <param-value>com.googlecode.osgienterprise.ariespde.library.web.LibraryApplication</param-value>
+    </init-param-->
   </filter>
 
   <filter-mapping>
@@ -23,11 +31,6 @@
     <dispatcher>REQUEST</dispatcher>
     <dispatcher>ERROR</dispatcher>
   </filter-mapping>
-
-  <error-page>
-    <error-code>404</error-code>
-    <location>/404</location>
-  </error-page>
 
  <session-config>
    <session-timeout>15</session-timeout>

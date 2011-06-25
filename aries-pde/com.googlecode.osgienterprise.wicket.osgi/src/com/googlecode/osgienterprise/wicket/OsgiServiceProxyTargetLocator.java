@@ -5,12 +5,12 @@ import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.proxy.IProxyTargetLocator;
 import org.osgi.framework.BundleContext;
 
-public class OsgiServiceLocator implements IProxyTargetLocator {
+public class OsgiServiceProxyTargetLocator implements IProxyTargetLocator {
 
     private static final long serialVersionUID = 1L;
     private String className;
 
-    public OsgiServiceLocator(String className) {
+    public OsgiServiceProxyTargetLocator(String className) {
         this.className = className;
     }
     
@@ -18,6 +18,6 @@ public class OsgiServiceLocator implements IProxyTargetLocator {
     public Object locateProxyTarget() {
         WebApplication application = (WebApplication) Application.get();
         BundleContext context = (BundleContext) application.getServletContext().getAttribute("osgi-bundlecontext");
-        return ServiceLookup.getOsgiService(context, className);
+        return OsgiServiceLookup.getOsgiService(context, className);
     }
 }

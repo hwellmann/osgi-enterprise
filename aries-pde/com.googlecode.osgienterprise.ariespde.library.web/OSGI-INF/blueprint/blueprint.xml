@@ -11,6 +11,10 @@
   <bean id="libraryApplication" class="com.googlecode.osgienterprise.ariespde.library.web.LibraryApplication">
   </bean>
 
-  <service ref="libraryApplication" auto-export="class-hierarchy"/>
+  <service ref="libraryApplication" auto-export="class-hierarchy">
+    <service-properties>
+      <entry key="wicket.osgi.application.name" value="library"/>
+    </service-properties>
+  </service>
 
 </blueprint>

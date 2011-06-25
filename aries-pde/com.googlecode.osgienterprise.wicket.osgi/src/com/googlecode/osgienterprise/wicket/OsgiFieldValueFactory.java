@@ -37,7 +37,7 @@ public class OsgiFieldValueFactory implements IFieldValueFactory {
      */
     public Object getFieldValue(Field field, Object fieldOwner) {
         if (field.isAnnotationPresent(Inject.class)) {
-            OsgiServiceLocator locator = new OsgiServiceLocator(field.getType().getName());
+            OsgiServiceProxyTargetLocator locator = new OsgiServiceProxyTargetLocator(field.getType().getName());
 
 
             final Object target;
