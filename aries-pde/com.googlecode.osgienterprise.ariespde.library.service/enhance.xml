@@ -1,28 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-
-    Omadac - The Open Map Database Compiler
-    http://omadac.org
- 
-    (C) 2010, Harald Wellmann and Contributors
-
-    This library is free software; you can redistribute it and/or
-    modify it under the terms of the GNU Lesser General Public
-    License as published by the Free Software Foundation;
-    version 2.1 of the License.
-
-    This library is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    Lesser General Public License for more details.
--->
-<!--
   Enhancement for OpenJPA entity classes
+  
+  This script requires the following properties to be set
+  platform.install = root folder of target platform (parent of plugins/)
+  target.folder    = bin/folder of the current Eclipse project
   
   Author: Harald Wellmann
 -->
 
-<project name="omadac-nom-enhance">
+<project name="osgi-enterprise-ariespde-enhance">
   
   
   <!-- ===================================================================== -->
@@ -174,8 +161,6 @@
     <target name="post.clean">             
     </target>
 
-  
-  <property name="platform.install" value="/home/hwellmann/targets/aries-p2-0.0.1-SNAPSHOT"/>
   
   <path id="jpa.enhancement.classpath">
     <fileset dir="${platform.install}/plugins">
