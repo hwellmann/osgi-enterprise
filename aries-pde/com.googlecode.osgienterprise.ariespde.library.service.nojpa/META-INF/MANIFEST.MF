@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.googlecode.osgienterprise.ariespde.library.service.nojpa
+Bundle-Version: 0.0.1
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: javax.persistence;version="1.1.0"
+Export-Package: com.googlecode.osgienterprise.ariespde.library.model,
+ com.googlecode.osgienterprise.ariespde.library.service
