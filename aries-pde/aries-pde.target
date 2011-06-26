@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.6"?>
+
+<target name="Aries">
+<locations>
+<location path="/home/hwellmann/targets/aries-p2-0.0.1-SNAPSHOT" type="Directory"/>
+</locations>
+</target>
