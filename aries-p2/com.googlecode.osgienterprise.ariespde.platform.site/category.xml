@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.googlecode.osgienterprise.ariespde.platform.feature_0.0.0.jar" id="com.googlecode.osgienterprise.ariespde.platform.feature" version="0.0.0">
+      <category name="ariespde"/>
+   </feature>
+   <category-def name="ariespde" label="Aries PDE Example"/>
+</site>

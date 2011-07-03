@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.googlecode.osgienterprise.ariespde.platform.feature"
+      version="0.0.1.qualifier">
+
+   <plugin
+         id="ch.qos.logback.classic"
+         download-size="0"
+         install-size="0"
+         version="0.9.29"
+         unpack="false"/>
+
+   <plugin
+         id="ch.qos.logback.core"
+         download-size="0"
+         install-size="0"
+         version="0.9.29"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.aries.blueprint.api"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.aries.blueprint.core"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.aries.jndi.api"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.aries.jndi.core"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.aries.jndi.url"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.aries.jpa.api"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.aries.jpa.blueprint.aries"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.aries.jpa.container"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.aries.jpa.container.context"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.aries.proxy.api"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.aries.proxy.impl"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.aries.transaction.blueprint"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.aries.transaction.manager"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.aries.transaction.wrappers"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.aries.util"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.commons.collections"
+         download-size="0"
+         install-size="0"
+         version="3.2.1"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.commons.dbcp"
+         download-size="0"
+         install-size="0"
+         version="1.4.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.commons.lang"
+         download-size="0"
+         install-size="0"
+         version="2.6.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.commons.pool"
+         download-size="0"
+         install-size="0"
+         version="1.5.6"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.geronimo.specs.geronimo-atinject_1.0_spec"
+         download-size="0"
+         install-size="0"
+         version="1.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.geronimo.specs.geronimo-jpa_2.0_spec"
+         download-size="0"
+         install-size="0"
+         version="1.1.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.geronimo.specs.geronimo-jta_1.1_spec"
+         download-size="0"
+         install-size="0"
+         version="1.1.1"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.geronimo.specs.geronimo-servlet_2.5_spec"
+         download-size="0"
+         install-size="0"
+         version="1.2.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.openjpa"
+         download-size="0"
+         install-size="0"
+         version="2.1.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.servicemix.bundles.cglib"
+         download-size="0"
+         install-size="0"
+         version="2.1.0.3_4"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.servicemix.bundles.serp"
+         download-size="0"
+         install-size="0"
+         version="1.13.1.4"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.osgi"
+         download-size="0"
+         install-size="0"
+         version="3.6.2.R36x_v20110210"
+         unpack="false"/>
+
+   <plugin
+         id="org.objectweb.asm.all"
+         download-size="0"
+         install-size="0"
+         version="3.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.ops4j.pax.web.pax-web-extender-war"
+         download-size="0"
+         install-size="0"
+         version="0.8.1"
+         unpack="false"/>
+
+   <plugin
+         id="org.ops4j.pax.web.pax-web-jetty-bundle"
+         download-size="0"
+         install-size="0"
+         version="0.8.1"
+         unpack="false"/>
+
+   <plugin
+         id="osgi.cmpn"
+         download-size="0"
+         install-size="0"
+         version="4.2.0.200908310645"
+         unpack="false"/>
+
+</feature>
