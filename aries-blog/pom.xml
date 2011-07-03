@@ -16,6 +16,17 @@
   	<module>com.googlecode.osgienterprise.blog.web</module>
   	<module>com.googlecode.osgienterprise.blog.ds</module>
   </modules>
+   
+   <repositories> 
+    <repository>
+      <id>aries.platform</id>
+      <!-- set this variable to a suitable target platform URL, e.g. an artifact URL from Hudson -->
+      <url>${aries_p2}</url>
+      <layout>p2</layout>
+    </repository>
+  </repositories>
+  
+  
   
   <build>
     <plugins>

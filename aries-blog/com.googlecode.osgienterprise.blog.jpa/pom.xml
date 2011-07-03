@@ -16,6 +16,9 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>openjpa-maven-plugin</artifactId>
         <version>1.1</version>
+        <configuration>
+          <persistenceXmlFile>${basedir}/META-INF/persistence.xml</persistenceXmlFile>
+        </configuration>
         <executions>
           <execution>
             <id>enhancer</id>
