@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Api
+Bundle-SymbolicName: com.googlecode.osgienterprise.blog.api
+Bundle-Version: 0.0.1.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: com.googlecode.osgienterprise.blog.api,
+ com.googlecode.osgienterprise.blog.api.comment.persistence,
+ com.googlecode.osgienterprise.blog.api.persistence

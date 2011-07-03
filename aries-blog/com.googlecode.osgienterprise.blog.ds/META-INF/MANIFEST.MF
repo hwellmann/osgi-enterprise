@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ds
+Bundle-SymbolicName: com.googlecode.osgienterprise.blog.ds
+Bundle-Version: 0.0.1
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Service: javax.sql.DataSource;osgi.jndi.service.name="jdbc/blog
+ dbnojta",javax.sql.XADataSource;osgi.jndi.service.name="jdbc/blogdb"
+Import-Package: javax.sql,
+ org.apache.derby.jdbc,
+ org.osgi.service.blueprint;version="1.0.1"
