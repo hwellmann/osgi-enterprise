@@ -9,9 +9,9 @@ Import-Package: com.googlecode.osgienterprise.ariespde.library.model,
  javax.inject;version="1.0.0",
  javax.servlet;version="2.5.0",
  javax.servlet.http;version="2.5.0",
- org.apache.wicket.injection;version="1.4.17",
  org.osgi.framework;version="1.5.0",
  org.osgi.util.tracker;version="1.4.0",
  org.slf4j;version="1.6.1"
-Require-Bundle: com.googlecode.osgienterprise.wicket;bundle-version="1.4.17",
- com.googlecode.osgienterprise.wicket.ioc;bundle-version="1.4.17"
+Require-Bundle: org.wicketstuff.bundle;bundle-version="1.5.0",
+ org.wicketstuff.ioc-bundle;bundle-version="1.5.0",
+ org.wicketstuff.osgi;bundle-version="1.5.0"

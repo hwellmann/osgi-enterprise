@@ -3,6 +3,6 @@
 
 <target name="Aries">
 <locations>
-<location path="/home/hwellmann/targets/aries-p2-0.0.1-SNAPSHOT" type="Directory"/>
+<location path="/home/hwellmann/targets/aries-pde" type="Directory"/>
 </locations>
 </target>

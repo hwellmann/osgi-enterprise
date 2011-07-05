@@ -2,16 +2,16 @@ package com.googlecode.osgienterprise.ariespde.library.web;
 
 import org.apache.wicket.Page;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.wicketstuff.osgi.OsgiClassResolver;
+import org.wicketstuff.osgi.inject.OsgiComponentInjector;
 
-import com.googlecode.osgienterprise.wicket.OsgiClassResolver;
-import com.googlecode.osgienterprise.wicket.OsgiComponentInjector;
 
 public class LibraryApplication extends WebApplication {
 
     @Override
     protected void init() {
         super.init();
-        addComponentInstantiationListener(new OsgiComponentInjector());
+        getComponentInstantiationListeners().add(new OsgiComponentInjector());
         
         /*
          * Not really needed, at least on Jetty. 
