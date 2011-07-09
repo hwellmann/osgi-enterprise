@@ -1,0 +1,33 @@
+<html
+  xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<body>
+  <wicket:extend>
+    <div id="mainContent" class="mainContent">
+      <form name="createPost" wicket:id="createPost">
+        <div class="feedback" wicket:id="feedback" />
+        <div class="textEntry">
+          <label>Title <input dojoType="dijit.form.TextBox" type="text"
+            name="title" value="" wicket:id="title" /> </label>
+        </div>
+        <div class="textEntry">
+          <textarea dojoType="dijit.Editor" id="text" name="text"
+            wicket:id="text"></textarea>
+        </div>
+        <div class="textEntry">
+          <label>Email <input dojoType="dijit.form.TextBox" type="text"
+            name="email" value="" wicket:id="email" /> </label>
+        </div>
+        <div class="textEntry">
+          <label>Tags &nbsp;<input dojoType="dijit.form.TextBox"
+            type="text" name="tags" value="" wicket:id="tags" /> </label>
+        </div>
+        <input type="hidden" name="text" id="text" value="" /> <input
+          class="submit" type="submit" value="Submit" name="Submit"
+          onclick="storeBlogContent();return true;" />
+      </form>
+      <br />
+    </div>
+  </wicket:extend>
+</body>
+
+</html>

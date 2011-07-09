@@ -1,0 +1,37 @@
+<html
+  xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<body>
+  <wicket:extend>
+    <div id="mainContent" class="mainContent">
+      <form wicket:id="editAuthor">
+        <div class="feedback" wicket:id="feedback" />
+        <div class="textEntry">
+          <label>Name <input dojoType="dijit.form.TextBox" type="text"
+            name="name" value="" wicket:id="fullName" /> </label>
+        </div>
+        <div class="textEntry">
+          <label>Nickname <input dojoType="dijit.form.TextBox"
+            type="text" name="nickName" value="" wicket:id="name" /> </label>
+        </div>
+        <div class="textEntry">
+          <label>Email <input dojoType="dijit.form.TextBox" type="text"
+            name="email" value="" wicket:id="emailAddress" /> </label>
+        </div>
+        <div class="textEntry">
+          <label>Date of Birth <input dojoType="dijit.form.DateTextBox"
+            type="text" name="dob" required="true" value=""
+            wicket:id="dateOfBirth" /> </label>
+        </div>
+        <div class="textEntry">
+          <label>Bio <textarea dojoType="dijit.form.Textarea"
+              style="width: 300px" name="bio" wicket:id="bio"></textarea> </label>
+        </div>
+        <input class="submit" type="submit" value="Submit" name="Submit" />
+      </form>
+      <br/>
+
+    </div>
+  </wicket:extend>
+</body>
+
+</html>

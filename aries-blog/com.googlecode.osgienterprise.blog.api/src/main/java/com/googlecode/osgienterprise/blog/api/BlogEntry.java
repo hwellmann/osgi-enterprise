@@ -18,9 +18,10 @@
  */
 package com.googlecode.osgienterprise.blog.api;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public interface BlogEntry
+public interface BlogEntry extends Serializable
 {
   /** 
    * Get the title of the blog posting.

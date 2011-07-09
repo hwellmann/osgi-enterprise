@@ -148,15 +148,19 @@ public class BlogListAdapter<F, B> implements List<F> {
 		return backendList.size();
 	}
 
-	public List subList(int fromIndex, int toIndex) {
+	public List<F> subList(int fromIndex, int toIndex) {
 		throw new UnsupportedOperationException("subList() is not supported");
 	}
 
 	public Object[] toArray() {
-		throw new UnsupportedOperationException("toArray() is not supported");
+	    Object[] array = new Object[size()];
+	    for (int i = 0; i < size(); i++) {
+	        array[i] = get(i);
+	    }
+	    return array;
 	}
 
-	public Object[] toArray(Object[] a) {
+	public <T> T[] toArray(T[] a) {
 		throw new UnsupportedOperationException(
 				"toArray(Object[] a) is not supported");
 	}

@@ -13,7 +13,8 @@
   	<module>com.googlecode.osgienterprise.blog.api</module>
   	<module>com.googlecode.osgienterprise.blog.jpa</module>
   	<module>com.googlecode.osgienterprise.blog.biz</module>
-  	<module>com.googlecode.osgienterprise.blog.web</module>
+        <module>com.googlecode.osgienterprise.blog.web</module>
+        <module>com.googlecode.osgienterprise.blog.wicket</module>
   	<module>com.googlecode.osgienterprise.blog.ds</module>
   </modules>
    
