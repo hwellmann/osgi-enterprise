@@ -24,11 +24,6 @@
       <url>file:/home/hwellmann/tmp</url>
       <layout>p2</layout>
     </repository>
-    <!--repository>
-      <id>galileo</id>
-      <url>http://download.eclipse.org/releases/galileo/</url>
-      <layout>p2</layout>
-    </repository-->
   </repositories>
 
   <build>
