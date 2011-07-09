@@ -36,12 +36,9 @@
   <profiles>
     <profile>
       <id>openjpa</id>
-      <dependencies>
-        <dependency>
-          <groupId>org.apache.openjpa</groupId>
-          <artifactId>openjpa</artifactId>
-        </dependency>
-      </dependencies>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
       <build>
         <plugins>
           <plugin>

@@ -13,7 +13,7 @@
     <eclipselink.version>2.1.3</eclipselink.version>
     <gemini.version>1.0.0.M1</gemini.version>
     <spring.version>3.0.5.RELEASE</spring.version>
-    <tycho.version>0.10.0</tycho.version>
+    <tycho.version>0.13.0-SNAPSHOT</tycho.version>
   </properties>
 
   <modules>
@@ -218,6 +218,9 @@
   <profiles>
     <profile>
       <id>openjpa</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>        
+      </activation>
       <build>
         <plugins>
           <plugin>
@@ -282,4 +285,12 @@
       <url>http://zodiac.springsource.com/maven/bundles/milestone</url>
     </repository>
   </repositories>
+  
+  <pluginRepositories>
+    <pluginRepository>
+      <id>sonatype-forge</id>
+      <name>Sonatype Forge</name>
+      <url>https://repository.sonatype.org/content/repositories/forge</url>
+    </pluginRepository>
+  </pluginRepositories>
 </project>
