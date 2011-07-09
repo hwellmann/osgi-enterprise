@@ -17,10 +17,6 @@
  */
 package com.googlecode.osgienterprise.ariestx.library.test;
 
-import static org.junit.Assert.assertEquals;
-
-import java.util.List;
-
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
@@ -30,7 +26,6 @@ import org.ops4j.pax.exam.junit.JUnit4TestRunner;
 import org.osgi.framework.BundleContext;
 
 import com.googlecode.osgienterprise.ariestx.library.client.LibraryClient;
-import com.googlecode.osgienterprise.ariestx.library.model.Book;
 
 
 /**
@@ -46,9 +41,6 @@ import com.googlecode.osgienterprise.ariestx.library.model.Book;
 @RunWith(JUnit4TestRunner.class)
 public abstract class AbstractLibraryTest
 {
-    public static final String ARIES_VERSION = "0.3";
-    public static final String OSGI_ENTERPRISE_VERSION = "0.0.1-SNAPSHOT";
-
     @Test
     public void findDataSource(BundleContext bc) {
         ServiceLookup.getOsgiService(bc, DataSource.class);
