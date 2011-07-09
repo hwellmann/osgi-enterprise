@@ -17,8 +17,8 @@
  */
 package com.googlecode.osgienterprise.ariestx.library.test;
 
-import static org.ops4j.pax.exam.CoreOptions.*;
-import static org.ops4j.pax.exam.CoreOptions.keepCaches;
+import static org.ops4j.pax.exam.CoreOptions.compendiumProfile;
+import static org.ops4j.pax.exam.CoreOptions.equinox;
 import static org.ops4j.pax.exam.CoreOptions.mavenBundle;
 import static org.ops4j.pax.exam.CoreOptions.options;
 import static org.ops4j.pax.exam.CoreOptions.systemProperty;
@@ -30,9 +30,7 @@ import org.ops4j.pax.exam.ExamSystem;
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.TestContainer;
 import org.ops4j.pax.exam.junit.Configuration;
-import org.ops4j.pax.exam.junit.ExamReactorStrategy;
 import org.ops4j.pax.exam.spi.container.PaxExamRuntime;
-import org.ops4j.pax.exam.spi.reactors.EagerSingleStagedReactorFactory;
 
 
 /**
@@ -54,7 +52,7 @@ public class OpenJpaServerSystem
         mavenBundle("com.googlecode.osgi-enterprise.jpa", "com.googlecode.osgienterprise.library.datasource").versionAsInProject(),
         mavenBundle("com.googlecode.osgi-enterprise.ariestx", "com.googlecode.osgienterprise.ariestx.library.service").versionAsInProject(),
         mavenBundle("com.googlecode.osgi-enterprise.ariestx", "com.googlecode.osgienterprise.ariestx.library.client").versionAsInProject(),
-        //mavenBundle("com.googlecode.osgi-enterprise", "com.googlecode.osgienterprise.logback.config").versionAsInProject().startLevel(100),
+        mavenBundle("com.googlecode.osgi-enterprise", "com.googlecode.osgienterprise.logback.config").versionAsInProject().noStart(),
 
         // OpenJPA and dependencies
         mavenBundle("org.apache.openjpa", "openjpa").versionAsInProject(),
@@ -95,26 +93,20 @@ public class OpenJpaServerSystem
 
         systemProperty("org.ops4j.pax.logging.DefaultServiceLog.level").value("INFO"),
         systemProperty("osgi.console"),
-       
-        
+               
         compendiumProfile(),
         equinox(),
         
-        /* 
-         * Uncomment and edit the following options for diagnosis to see the bundles
-         * provisioned by Pax Exam and to restart the framework manually after Pax Exam has finished.  
-         */
-         workingDirectory("/tmp/pax")
-         //keepCaches()
+        workingDirectory("/tmp/pax")
         );
         return options;
     }
     
     public static void main(String[] args) throws IOException {
-        ExamSystem system = PaxExamRuntime.createServerSystem( configuration() );
+        ExamSystem system = PaxExamRuntime.createServerSystem(configuration());
         
         // create Container (you should have exactly one configured!) and start.
-        TestContainer container = PaxExamRuntime.createContainer( system );
+        TestContainer container = PaxExamRuntime.createContainer(system);
         container.start();
     }
 }
