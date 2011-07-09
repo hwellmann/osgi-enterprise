@@ -2,7 +2,6 @@ package com.googlecode.osgienterprise.blog.wicket;
 
 import javax.inject.Inject;
 
-import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextArea;
 import org.apache.wicket.markup.html.form.TextField;
@@ -62,13 +61,11 @@ public class EditAuthorPage extends Layout {
     }
 
     public EditAuthorPage() {
-        add(new Label("title", "Edit Author"));
         Author author = new Author();
         add(new EditAuthorForm("editAuthor", new CompoundPropertyModel<Author>(author)));
     }
 
     public EditAuthorPage(PageParameters params) {
-        add(new Label("title", "Edit Author"));
         String email = params.get("email").toString();
         Author author = new Author();
         if (email != null) {
@@ -82,5 +79,10 @@ public class EditAuthorPage extends Layout {
             }
         }
         add(new EditAuthorForm("editAuthor", new CompoundPropertyModel<Author>(author)));
+    }
+    
+    @Override
+    protected String getPageTitle() {
+        return "Edit Author";
     }
 }

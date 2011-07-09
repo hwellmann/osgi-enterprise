@@ -6,6 +6,7 @@ import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.IModel;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import com.googlecode.osgienterprise.blog.api.BlogEntry;
 
@@ -23,7 +24,9 @@ public class BlogEntryPanel extends Panel {
         Label body = new Label("body");
         body.setEscapeModelStrings(false);
         add(body);
-        Link<Page> link = new BookmarkablePageLink<Page>("authorEmail", ViewAuthorPage.class);                
+        PageParameters params = new PageParameters();
+        params.set("email", model.getObject().getAuthorEmail());
+        Link<Page> link = new BookmarkablePageLink<Page>("authorEmail", ViewAuthorPage.class, params);                
         link.add(new Label("author.name"));
         add(link);
     }

@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.PropertyListView;
 
@@ -19,7 +18,6 @@ public class ViewBlogPage extends Layout {
     private BloggingService bloggingService;
     
     public ViewBlogPage() {
-        add(new Label("title", bloggingService.getBlogTitle()));
         List<? extends BlogEntry> posts = bloggingService.getAllBlogEntries();
         
         
@@ -36,4 +34,8 @@ public class ViewBlogPage extends Layout {
         add(listView);
     }
 
+    @Override
+    protected String getPageTitle() {
+        return bloggingService.getBlogTitle();
+    }
 }

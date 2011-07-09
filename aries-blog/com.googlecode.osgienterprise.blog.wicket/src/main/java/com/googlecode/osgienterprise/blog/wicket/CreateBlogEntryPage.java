@@ -2,7 +2,6 @@ package com.googlecode.osgienterprise.blog.wicket;
 
 import javax.inject.Inject;
 
-import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextArea;
 import org.apache.wicket.markup.html.form.TextField;
@@ -30,9 +29,11 @@ public class CreateBlogEntryPage extends Layout {
             
             add(new FeedbackPanel("feedback"));
 
-            add(new TextField<String>("title"));
+            TextField<String> titleField = new TextField<String>("title");
+            titleField.setRequired(true);
+            add(titleField);
             TextArea<String> textArea = new TextArea<String>("text");
-            //textArea.setEscapeModelStrings(false);
+            textArea.setRequired(true);
             add(textArea);
             
             TextField<String> emailField = new TextField<String>("email");
@@ -47,7 +48,8 @@ public class CreateBlogEntryPage extends Layout {
             Post post = getModelObject();
             BlogAuthor blogAuthor = bloggingService.getBlogAuthor(post.getEmail());
             if (blogAuthor != null) {
-                bloggingService.createBlogEntry(post.getEmail(), post.getTitle(), post.getText(), post.getTags());
+                String tags = (post.getTags() == null) ? "" : post.getTags();
+                bloggingService.createBlogEntry(post.getEmail(), post.getTitle(), post.getText(), tags);
                 setResponsePage(ViewBlogPage.class);
             }
             else {
@@ -58,8 +60,12 @@ public class CreateBlogEntryPage extends Layout {
     }
 
     public CreateBlogEntryPage() {
-        add(new Label("title", "Create New Post"));
         Post post = new Post();
         add(new CreateBlogEntryForm("createPost", new CompoundPropertyModel<Post>(post)));
+    }
+    
+    @Override
+    protected String getPageTitle() {
+        return "Create New Post";
     }
 }

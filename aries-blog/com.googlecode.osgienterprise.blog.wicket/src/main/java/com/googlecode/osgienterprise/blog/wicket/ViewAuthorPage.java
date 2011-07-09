@@ -8,6 +8,7 @@ import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
+import com.googlecode.osgienterprise.blog.api.BlogAuthor;
 import com.googlecode.osgienterprise.blog.api.BloggingService;
 import com.googlecode.osgienterprise.blog.wicket.bean.Author;
 
@@ -18,12 +19,30 @@ public class ViewAuthorPage extends Layout {
     @Inject
     private BloggingService bloggingService;
     
+    private String email;
+
+    private Author author;
+    
     public ViewAuthorPage() {
-        add(new Label("title", bloggingService.getBlogTitle()));
+        
+    }
+
+    public ViewAuthorPage(PageParameters params) {
+        this.email = params.get("email").toString();
     }
 
     public ViewAuthorPage(final Author author) {
-        add(new Label("title", bloggingService.getBlogTitle()));
+        this.author = author;
+    }
+    
+    @Override
+    protected void onInitialize() {
+        super.onInitialize();
+
+        if (author == null) {
+            BlogAuthor blogAuthor = bloggingService.getBlogAuthor(email);
+            author = new Author(blogAuthor);
+        }
         CompoundPropertyModel<Author> model = new CompoundPropertyModel<Author>(author);
         setDefaultModel(model);
         add(new Label("fullName"));
@@ -46,4 +65,8 @@ public class ViewAuthorPage extends Layout {
         });
     }
 
+    @Override
+    protected String getPageTitle() {
+        return bloggingService.getBlogTitle();
+    }
 }

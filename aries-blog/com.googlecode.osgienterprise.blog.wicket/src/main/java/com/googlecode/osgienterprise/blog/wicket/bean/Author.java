@@ -2,6 +2,8 @@ package com.googlecode.osgienterprise.blog.wicket.bean;
 
 import java.io.Serializable;
 
+import com.googlecode.osgienterprise.blog.api.BlogAuthor;
+
 public class Author implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -11,6 +13,17 @@ public class Author implements Serializable {
     private String emailAddress;
     private String bio;
     private String dateOfBirth;
+
+    public Author() {
+    }
+    
+    public Author(BlogAuthor blogAuthor) {
+        this.name = blogAuthor.getName();
+        this.fullName = blogAuthor.getFullName();
+        this.emailAddress = blogAuthor.getEmailAddress();
+        this.bio = blogAuthor.getBio();
+        this.dateOfBirth = blogAuthor.getDateOfBirth();
+    }
 
     public String getName() {
         return name;
