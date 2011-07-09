@@ -11,6 +11,7 @@ public class BlogApplication extends WebApplication {
     protected void init() {
         super.init();
         getComponentInstantiationListeners().add(new OsgiComponentInjector());
+        getMarkupSettings().setDefaultMarkupEncoding("UTF-8");
         
         mountPage("/editAuthor", EditAuthorPage.class);
         mountPage("/createBlogEntry", CreateBlogEntryPage.class);

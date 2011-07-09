@@ -20,7 +20,9 @@ public class BlogEntryPanel extends Panel {
         super(id, model);
         add(new Label("publishDate"));
         add(new Label("title"));
-        add(new Label("body"));
+        Label body = new Label("body");
+        body.setEscapeModelStrings(false);
+        add(body);
         Link<Page> link = new BookmarkablePageLink<Page>("authorEmail", ViewAuthorPage.class);                
         link.add(new Label("author.name"));
         add(link);

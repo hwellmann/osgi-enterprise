@@ -31,7 +31,9 @@ public class CreateBlogEntryPage extends Layout {
             add(new FeedbackPanel("feedback"));
 
             add(new TextField<String>("title"));
-            add(new TextArea<String>("text"));
+            TextArea<String> textArea = new TextArea<String>("text");
+            //textArea.setEscapeModelStrings(false);
+            add(textArea);
             
             TextField<String> emailField = new TextField<String>("email");
             emailField.setRequired(true);            
