@@ -3,11 +3,11 @@
   <parent>
     <artifactId>aggregator</artifactId>
     <groupId>com.googlecode.osgi-enterprise</groupId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
   </parent>
   <groupId>com.googlecode.osgi-enterprise</groupId>
   <artifactId>jpa</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.2.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>OSGi Enterprise JPA Aggregator</name>
   <modules>

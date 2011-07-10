@@ -3,11 +3,11 @@
   <parent>
     <artifactId>aries-pde</artifactId>
     <groupId>com.googlecode.osgi-enterprise</groupId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.googlecode.osgi-enterprise.ariespde</groupId>
   <artifactId>com.googlecode.osgienterprise.ariespde.library.ds.derby</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.2.0-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
 </project>

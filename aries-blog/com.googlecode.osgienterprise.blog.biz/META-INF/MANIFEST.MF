@@ -2,5 +2,5 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Biz
 Bundle-SymbolicName: com.googlecode.osgienterprise.blog.biz
-Bundle-Version: 0.0.1.qualifier
-Require-Bundle: com.googlecode.osgienterprise.blog.api;bundle-version="0.0.1"
+Bundle-Version: 0.2.0.qualifier
+Require-Bundle: com.googlecode.osgienterprise.blog.api;bundle-version="0.2.0"

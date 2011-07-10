@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="com.googlecode.osgienterprise.ariespde.platform.feature"
-      version="0.0.1.qualifier">
+      version="0.2.0.qualifier">
 
    <plugin
          id="ch.qos.logback.classic"
@@ -233,40 +233,35 @@
          install-size="0"
          version="4.2.0.200908310645"
          unpack="false"/>
-         
+
    <plugin
          id="org.wicketstuff.bundle"
          download-size="0"
          install-size="0"
-         version="0.0.0"
-        />      
+         version="0.0.0"/>
 
    <plugin
          id="org.wicketstuff.ioc-bundle"
          download-size="0"
          install-size="0"
-         version="0.0.0"
-        />      
+         version="0.0.0"/>
 
    <plugin
          id="derby"
          download-size="0"
          install-size="0"
-         version="0.0.0"
-        />      
+         version="0.0.0"/>
 
    <plugin
          id="slf4j.api"
          download-size="0"
          install-size="0"
-         version="0.0.0"
-        />      
+         version="0.0.0"/>
 
    <plugin
          id="org.wicketstuff.osgi"
          download-size="0"
          install-size="0"
-         version="1.5.0"
-        />      
+         version="0.0.0"/>
 
 </feature>

@@ -3,10 +3,10 @@
   <parent>
     <artifactId>aries-blog</artifactId>
     <groupId>com.googlecode.osgi-enterprise</groupId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
   </parent>
   <groupId>com.googlecode.osgi-enterprise</groupId>
   <artifactId>com.googlecode.osgienterprise.blog.web</artifactId>
   <packaging>eclipse-plugin</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.2.0-SNAPSHOT</version>
 </project>

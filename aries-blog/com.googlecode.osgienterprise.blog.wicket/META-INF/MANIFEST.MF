@@ -2,13 +2,13 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Blog Web
 Bundle-SymbolicName: com.googlecode.osgienterprise.blog.wicket
-Bundle-Version: 0.0.1.qualifier
+Bundle-Version: 0.2.0.qualifier
 Import-Package: javax.inject;version="1.0.0",
  javax.persistence;version="1.1.0",
  javax.servlet;version="2.5.0",
  javax.servlet.http;version="2.5.0",
  org.slf4j;version="1.6.1"
-Require-Bundle: com.googlecode.osgienterprise.blog.api;bundle-version="0.0.1",
+Require-Bundle: com.googlecode.osgienterprise.blog.api;bundle-version="0.2.0",
  org.wicketstuff.bundle;bundle-version="1.5.0",
  org.wicketstuff.ioc-bundle;bundle-version="1.5.0",
  org.wicketstuff.osgi;bundle-version="1.5.0"

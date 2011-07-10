@@ -3,13 +3,13 @@
   <parent>
     <artifactId>jpa</artifactId>
     <groupId>com.googlecode.osgi-enterprise</groupId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
   </parent>
   <groupId>com.googlecode.osgi-enterprise.jpa</groupId>
   <artifactId>com.googlecode.osgienterprise.library.datasource</artifactId>
   <packaging>bundle</packaging>
   <name>OSGi Enterprise Library Data Source</name>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.2.0-SNAPSHOT</version>
   <dependencies>
     <dependency>
       <groupId>org.apache.derby</groupId>
