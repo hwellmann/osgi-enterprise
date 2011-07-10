@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Ds
 Bundle-SymbolicName: com.googlecode.osgienterprise.blog.ds
-Bundle-Version: 0.0.1
+Bundle-Version: 0.0.1.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Service: javax.sql.DataSource;osgi.jndi.service.name="jdbc/blog
  dbnojta",javax.sql.XADataSource;osgi.jndi.service.name="jdbc/blogdb"
