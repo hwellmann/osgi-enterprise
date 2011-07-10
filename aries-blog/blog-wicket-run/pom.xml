@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>aries-blog</artifactId>
+    <groupId>com.googlecode.osgi-enterprise</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.googlecode.osgi-enterprise</groupId>
+  <artifactId>blog-wicket-run</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.ops4j</groupId>
+        <artifactId>maven-pax-plugin</artifactId>
+        <configuration>
+          <noDependencies>true</noDependencies>
+          
+          <deployURLs>
+            mvn:com.googlecode.osgi-enterprise/com.googlecode.osgienterprise.blog.api/0.0.1-SNAPSHOT,
+            mvn:com.googlecode.osgi-enterprise/com.googlecode.osgienterprise.blog.biz/0.0.1-SNAPSHOT,
+            mvn:com.googlecode.osgi-enterprise/com.googlecode.osgienterprise.blog.ds/0.0.1-SNAPSHOT,
+            mvn:com.googlecode.osgi-enterprise/com.googlecode.osgienterprise.blog.jpa/0.0.1-SNAPSHOT,
+            mvn:com.googlecode.osgi-enterprise/com.googlecode.osgienterprise.blog.wicket/0.0.1-SNAPSHOT,
+            mvn:org.wicketstuff/wicketstuff-osgi/1.5-SNAPSHOT,
+            mvn:org.wicketstuff/wicketstuff-bundle/1.5-SNAPSHOT,
+            mvn:org.wicketstuff/wicketstuff-ioc-bundle/1.5-SNAPSHOT,
+            mvn:org.apache.aries.blueprint/org.apache.aries.blueprint.core/0.3,
+            mvn:org.apache.aries.blueprint/org.apache.aries.blueprint.api/0.3,
+            mvn:org.apache.aries.jndi/org.apache.aries.jndi.api/0.3,
+            mvn:org.apache.aries.jndi/org.apache.aries.jndi.core/0.3,
+            mvn:org.apache.aries.jndi/org.apache.aries.jndi.url/0.3,
+            mvn:org.apache.aries.jpa/org.apache.aries.jpa.api/0.3,
+            mvn:org.apache.aries.jpa/org.apache.aries.jpa.blueprint.aries/0.3,
+            mvn:org.apache.aries.jpa/org.apache.aries.jpa.container/0.3,
+            mvn:org.apache.aries.jpa/org.apache.aries.jpa.container.context/0.3,
+            mvn:org.apache.aries.transaction/org.apache.aries.transaction.blueprint/0.3,
+            mvn:org.apache.aries.transaction/org.apache.aries.transaction.manager/0.3,
+
+            mvn:org.apache.aries/org.apache.aries.util/0.3,
+            mvn:org.apache.aries.proxy/org.apache.aries.proxy.api/0.3,
+            mvn:org.apache.aries.proxy/org.apache.aries.proxy.impl/0.3,
+            mvn:org.apache.openjpa/openjpa/2.1.0,
+            mvn:org.apache.geronimo.specs/geronimo-atinject_1.0_spec/1.0,
+            mvn:org.apache.geronimo.specs/geronimo-jpa_2.0_spec/1.1,
+            mvn:org.apache.geronimo.specs/geronimo-jta_1.1_spec/1.1.1,
+            mvn:commons-lang/commons-lang/2.6,
+            mvn:commons-collections/commons-collections/3.2.1,
+            mvn:commons-pool/commons-pool/1.5.6,
+            mvn:commons-dbcp/commons-dbcp/1.4,
+            mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.serp/1.13.1_4,
+            mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.cglib/2.1_3_4,
+            mvn:org.apache.derby/derby/10.8.1.2,
+            
+            mvn:org.ops4j.pax.web/pax-web-extender-war/0.8.1,
+            mvn:org.ops4j.pax.web/pax-web-jetty-bundle/0.8.1,
+            
+            mvn:org.apache.geronimo.specs/geronimo-atinject_1.0_spec/1.0,
+            mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/1.2,
+            mvn:org.slf4j/slf4j-api/1.6.1,
+            mvn:ch.qos.logback/logback-classic/0.9.29,
+            mvn:ch.qos.logback/logback-core/0.9.29,
+            mvn:asm/asm-all/3.3
+          </deployURLs>
+          <provision>
+            <param>--platform=equinox</param>
+            <param>--profiles=compendium</param>
+            <param>--log=WARNING</param>            
+            <param>--workingDirectory=${basedir}/target/runner</param>            
+            <param>--vmOptions=-Dlogback.configurationFile=${basedir}/logback.xml</param>
+
+            <!-- Uncomment the following to enable remote debugging. -->
+            <!-- We use a property to mask the double hyphen within an XML comment... -->
+
+            <!--param>${pax.debug}</param -->
+          </provision>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

@@ -16,6 +16,7 @@
         <module>com.googlecode.osgienterprise.blog.web</module>
         <module>com.googlecode.osgienterprise.blog.wicket</module>
   	<module>com.googlecode.osgienterprise.blog.ds</module>
+  	<module>blog-wicket-run</module>
   </modules>
    
    <repositories> 
