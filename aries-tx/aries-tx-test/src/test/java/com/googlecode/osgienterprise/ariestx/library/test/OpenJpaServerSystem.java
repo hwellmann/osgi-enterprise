@@ -34,11 +34,7 @@ import org.ops4j.pax.exam.spi.container.PaxExamRuntime;
 
 
 /**
- * Simple integration test suite using OpenJPA in an OSGi context together with OSGi JPA and JNDI
- * services from Apache Aries.
- * 
- * The getOsgiService() methods are copied from Apache Aries integration tests and should be
- * factored out to a central utility class.
+ * Example of PaxExamRuntime.createServerSystem() usage.
  * 
  * @author Harald Wellmann
  *
